@@ -1,0 +1,38 @@
+[
+  {
+    "id": "circular-tec",
+    "name": "CIRCULAR TEC",
+    "fullName": "CIRCULAR TEC",
+    "logo": null,
+    "tagline": {
+      "es": "Economía circular · Macrozona norte",
+      "en": "Circular economy · Northern macrozone",
+      "zh": "循环经济 · 智利北部宏观区"
+    },
+    "todo": false
+  },
+  {
+    "id": "unap",
+    "name": "UNAP",
+    "fullName": "Universidad Arturo Prat",
+    "logo": null,
+    "tagline": {
+      "es": "Universidad Arturo Prat",
+      "en": "Arturo Prat University",
+      "zh": "阿图罗·普拉特大学"
+    },
+    "todo": true
+  },
+  {
+    "id": "santo-tomas",
+    "name": "Santo Tomás",
+    "fullName": "Santo Tomás",
+    "logo": null,
+    "tagline": {
+      "es": "Institución de educación superior",
+      "en": "Higher education institution",
+      "zh": "高等教育机构"
+    },
+    "todo": true
+  }
+]
