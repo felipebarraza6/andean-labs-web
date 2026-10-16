@@ -1,0 +1,104 @@
+[
+  {
+    "id": "ejemplo-01",
+    "example": true,
+    "date": "2026-10-10",
+    "title": {
+      "es": "[EJEMPLO] Andean Labs inaugura temporada de visitas técnicas",
+      "en": "[EXAMPLE] Andean Labs opens technical visit season",
+      "zh": "[示例] Andean Labs 开启技术参观季"
+    },
+    "summary": {
+      "es": "Noticia de ejemplo. Reemplaza este texto con el titular y resumen reales de tu anuncio.",
+      "en": "Sample news item. Replace this text with your real headline and summary.",
+      "zh": "示例新闻。请将此文本替换为真实标题和摘要。"
+    },
+    "image": "assets/news/ejemplo-01.jpg",
+    "link": ""
+  },
+  {
+    "id": "ejemplo-02",
+    "example": true,
+    "date": "2026-09-28",
+    "title": {
+      "es": "[EJEMPLO] Convenio activo con CIRCULAR TEC avanza en Iquique",
+      "en": "[EXAMPLE] Active partnership with CIRCULAR TEC advances in Iquique",
+      "zh": "[示例] 与 CIRCULAR TEC 的合作在伊基克推进"
+    },
+    "summary": {
+      "es": "Noticia de ejemplo sobre alianzas. Edita data/news.json para publicar contenido real.",
+      "en": "Sample partnership news. Edit data/news.json to publish real content.",
+      "zh": "示例合作新闻。编辑 data/news.json 以发布真实内容。"
+    },
+    "image": "assets/news/ejemplo-02.jpg",
+    "link": ""
+  },
+  {
+    "id": "ejemplo-03",
+    "example": true,
+    "date": "2026-09-15",
+    "title": {
+      "es": "[EJEMPLO] Laboratorios abiertos: mecatrónica y química",
+      "en": "[EXAMPLE] Open labs: mechatronics and chemistry",
+      "zh": "[示例] 开放实验室：机电一体化与化学"
+    },
+    "summary": {
+      "es": "Noticia de ejemplo. Sube una miniatura a assets/news/ y referencia la ruta aquí.",
+      "en": "Sample news. Upload a thumbnail to assets/news/ and reference the path here.",
+      "zh": "示例新闻。将缩略图上传到 assets/news/ 并在此引用路径。"
+    },
+    "image": "assets/news/ejemplo-03.jpg",
+    "link": ""
+  },
+  {
+    "id": "ejemplo-04",
+    "example": true,
+    "date": "2026-08-30",
+    "title": {
+      "es": "[EJEMPLO] Laboratorio de Biotecnología en operación",
+      "en": "[EXAMPLE] Biotechnology lab now operational",
+      "zh": "[示例] 生物技术实验室已投入运营"
+    },
+    "summary": {
+      "es": "Noticia de ejemplo sobre biotecnología. Marca example: false cuando publiques contenido real.",
+      "en": "Sample biotech news. Set example: false when publishing real content.",
+      "zh": "生物技术示例新闻。发布真实内容时将 example 设为 false。"
+    },
+    "image": "assets/news/ejemplo-04.jpg",
+    "link": ""
+  },
+  {
+    "id": "ejemplo-05",
+    "example": true,
+    "date": "2026-08-12",
+    "title": {
+      "es": "[EJEMPLO] Sala de podcast de Comunicaciones Andean Labs",
+      "en": "[EXAMPLE] Andean Labs Communications podcast studio",
+      "zh": "[示例] Andean Labs 传播播客工作室"
+    },
+    "summary": {
+      "es": "Noticia de ejemplo. El botón compartir usa el link o la URL de esta página.",
+      "en": "Sample news. The share button uses the link field or this page URL.",
+      "zh": "示例新闻。分享按钮使用 link 字段或本页 URL。"
+    },
+    "image": "assets/news/ejemplo-05.jpg",
+    "link": ""
+  },
+  {
+    "id": "ejemplo-06",
+    "example": true,
+    "date": "2026-07-20",
+    "title": {
+      "es": "[EJEMPLO] Cómo agregar una noticia a este sitio",
+      "en": "[EXAMPLE] How to add a news item to this site",
+      "zh": "[示例] 如何向本站添加新闻"
+    },
+    "summary": {
+      "es": "Lee el README: edita data/news.json, sube la imagen a assets/news/ y haz commit.",
+      "en": "See the README: edit data/news.json, upload the image to assets/news/, and commit.",
+      "zh": "请参阅 README：编辑 data/news.json，将图片上传到 assets/news/，然后提交。"
+    },
+    "image": "assets/news/ejemplo-06.jpg",
+    "link": ""
+  }
+]

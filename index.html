@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Andean Labs — Centro de I+D+i</title>
-<meta name="description" content="Andean Labs — Centro de Investigación, Desarrollo e Innovación con Laboratorio de Procesos Industriales, FAB LAB y Laboratorio de Mecatrónica. Convenio con CIRCULAR TEC.">
+<meta name="description" content="Andean Labs — Centro de Investigación, Desarrollo e Innovación con Laboratorio de Procesos Industriales, FAB LAB, Mecatrónica y Biotecnología. Iquique, Tarapacá.">
 <link rel="icon" type="image/png" href="assets/logo-icon.png">
 <link rel="apple-touch-icon" href="assets/logo-icon.png">
 <meta property="og:type" content="website">
@@ -78,7 +78,8 @@
   }
   .nav{
     display:flex; align-items:center; justify-content:space-between;
-    padding:18px 0;
+    padding:14px 0;
+    gap:16px;
   }
   .brand{
     font-family:var(--display);
@@ -87,6 +88,7 @@
     letter-spacing:.01em;
     display:flex; align-items:center; gap:10px;
     text-decoration:none;
+    flex:none;
   }
   .brand-mark{
     width:auto;
@@ -94,10 +96,13 @@
     flex:none;
     object-fit:contain;
   }
+  .nav-right{
+    display:flex; align-items:center; gap:18px;
+  }
   .navlinks{
-    display:flex; gap:34px; list-style:none;
+    display:flex; gap:22px; list-style:none;
     font-family:var(--mono);
-    font-size:13px;
+    font-size:12.5px;
     letter-spacing:.03em;
   }
   .navlinks a{
@@ -112,7 +117,7 @@
     font-size:13px;
     color:var(--bg-0);
     background:var(--copper);
-    padding:9px 18px;
+    padding:9px 16px;
     text-decoration:none;
     border-radius:var(--radius);
     letter-spacing:.02em;
@@ -120,9 +125,31 @@
     white-space:nowrap;
   }
   .nav-cta:hover{background:var(--copper-bright);}
+  .lang-switch{
+    display:flex; gap:2px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .lang-btn{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.04em;
+    background:transparent;
+    border:none;
+    color:var(--muted);
+    padding:7px 9px;
+    cursor:pointer;
+    transition:background .2s, color .2s;
+  }
+  .lang-btn:hover{color:var(--paper);}
+  .lang-btn.active{
+    background:var(--bg-2);
+    color:var(--copper-bright);
+  }
   .burger{display:none; background:none; border:none; color:var(--paper); font-size:22px;}
 
-  @media (max-width:860px){
+  @media (max-width:980px){
     .navlinks{
       position:absolute; top:100%; left:0; right:0;
       background:var(--bg-1);
@@ -131,8 +158,8 @@
       max-height:0; overflow:hidden;
       transition:max-height .3s ease;
     }
-    .navlinks.open{max-height:400px;}
-    .navlinks a{display:block; padding:16px 28px; border-top:1px solid var(--line-soft);}
+    .navlinks.open{max-height:520px;}
+    .navlinks a{display:block; padding:14px 28px; border-top:1px solid var(--line-soft);}
     .nav-cta{display:none;}
     .burger{display:block;}
   }
@@ -207,7 +234,6 @@
   .btn-ghost{border:1px solid var(--line); color:var(--paper);}
   .btn-ghost:hover{border-color:var(--patina); color:var(--patina);}
 
-  /* schematic diagram */
   .schema{
     position:relative;
     aspect-ratio:1/1;
@@ -253,7 +279,6 @@
   .p2{offset-path:path("M400,90 C320,90 310,190 230,190");}
   .p3{offset-path:path("M230,340 C230,270 230,250 230,190");}
 
-  /* ---------- SECTION SHELL ---------- */
   section{padding:100px 0;}
   .section-head{
     display:flex; justify-content:space-between; align-items:flex-end;
@@ -264,21 +289,18 @@
     font-weight:600;
     font-size:clamp(26px,3vw,38px);
     margin-top:14px;
-    max-width:20ch;
+    max-width:22ch;
   }
   .section-head p{
     color:var(--paper-dim);
     max-width:38ch;
     font-size:15px;
   }
-  .divider{
-    height:1px; background:var(--line-soft); border:none;
-  }
 
   /* ---------- LABS ---------- */
   #labs{background:var(--bg-1); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
   .lab-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    display:grid; grid-template-columns:repeat(2,1fr); gap:1px;
     background:var(--line-soft);
     border:1px solid var(--line-soft);
   }
@@ -323,52 +345,187 @@
     content:"·"; position:absolute; left:0; color:var(--patina);
   }
 
-  /* ---------- ALLIANCE ---------- */
-  #alianza .wrap{
-    display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+  /* ---------- GALLERY ---------- */
+  #galeria{background:var(--bg-0);}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
   }
-  @media (max-width:860px){ #alianza .wrap{grid-template-columns:1fr;} }
-  .alliance-mark{
-    border:1px solid var(--line);
-    padding:44px 36px;
+  @media (max-width:860px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .gallery-grid{grid-template-columns:1fr;} }
+  .gallery-item{
     position:relative;
-    background:
-      repeating-linear-gradient(135deg, var(--bg-1) 0 2px, transparent 2px 14px);
+    overflow:hidden;
+    aspect-ratio:4/3;
+    background:var(--bg-2);
+    border:1px solid var(--line-soft);
   }
-  .alliance-mark::before{
-    content:"CONVENIO ACTIVO";
+  .gallery-item img{
+    width:100%; height:100%;
+    object-fit:cover;
+    transition:transform .5s ease;
+  }
+  .gallery-item:hover img{transform:scale(1.04);}
+  .gallery-item.tall{grid-row:span 1;}
+  @media (min-width:861px){
+    .gallery-item:nth-child(1){grid-column:span 2;}
+  }
+
+  /* ---------- BIO FEATURE ---------- */
+  #biotecnologia{background:var(--bg-1); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
+  .bio-layout{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:48px;
+    align-items:start;
+  }
+  @media (max-width:900px){ .bio-layout{grid-template-columns:1fr;} }
+  .bio-copy h2{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(26px,3vw,36px);
+    margin:14px 0 18px;
+  }
+  .bio-copy p{color:var(--paper-dim); font-size:15px; max-width:42ch;}
+  .bio-photos{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:10px;
+  }
+  .bio-photos img{
+    width:100%; height:100%;
+    object-fit:cover;
+    border:1px solid var(--line-soft);
+    aspect-ratio:4/3;
+  }
+  .bio-photos .bio-main{grid-row:span 2; aspect-ratio:auto; min-height:100%;}
+  @media (max-width:560px){
+    .bio-photos{grid-template-columns:1fr;}
+    .bio-photos .bio-main{grid-row:auto;}
+  }
+
+  /* ---------- PODCAST ---------- */
+  #podcast .podcast-layout{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:48px;
+    align-items:center;
+  }
+  @media (max-width:860px){ #podcast .podcast-layout{grid-template-columns:1fr;} }
+  #podcast h2{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(26px,3vw,36px);
+    margin:14px 0 18px;
+  }
+  #podcast p{color:var(--paper-dim); font-size:15px; max-width:42ch;}
+  .podcast-photo{
+    border:1px solid var(--line-soft);
+    overflow:hidden;
+  }
+  .podcast-photo img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+  }
+
+  /* ---------- PARTNERS SLIDER ---------- */
+  #convenios{background:var(--bg-1); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
+  .partners-slider{
+    position:relative;
+    border:1px solid var(--line);
+    background:
+      repeating-linear-gradient(135deg, var(--bg-0) 0 2px, transparent 2px 14px);
+    min-height:280px;
+    padding:48px 56px;
+    overflow:hidden;
+  }
+  .partner-slide{
+    display:none;
+    text-align:center;
+    animation:fadeIn .45s ease;
+  }
+  .partner-slide.active{display:block;}
+  @keyframes fadeIn{
+    from{opacity:0; transform:translateY(8px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .partner-slide{animation:none;}
+  }
+  .partner-badge{
     font-family:var(--mono);
     font-size:11px;
     letter-spacing:.12em;
     color:var(--copper-bright);
-    display:block;
-    margin-bottom:26px;
+    margin-bottom:28px;
   }
-  .alliance-names{
-    display:flex; align-items:center; gap:20px;
+  .partner-placeholder{
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    margin:0 auto 20px;
+    max-width:320px;
+    padding:28px 24px;
+    border:1px dashed var(--line);
+    background:rgba(13,21,18,.55);
+  }
+  .partner-placeholder-name{
     font-family:var(--display);
     font-weight:600;
-    font-size:22px;
-    flex-wrap:wrap;
+    font-size:28px;
+    letter-spacing:.02em;
   }
-  .alliance-plus{color:var(--patina); font-family:var(--mono); font-size:18px;}
-  .alliance-mark .sub{
-    margin-top:18px;
+  .partner-todo{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--muted);
+    letter-spacing:.06em;
+  }
+  .partner-logo{
+    max-height:72px;
+    width:auto;
+    margin:0 auto 20px;
+  }
+  .partner-name{
+    font-family:var(--display);
+    font-size:22px;
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .partner-tagline{
     font-family:var(--mono);
     font-size:12px;
     color:var(--muted);
-    line-height:1.7;
+    letter-spacing:.04em;
   }
-  #alianza h2{
-    font-family:var(--display);
-    font-weight:600;
-    font-size:clamp(26px,3vw,36px);
-    margin:14px 0 20px;
+  .partners-controls{
+    display:flex; align-items:center; justify-content:center;
+    gap:16px; margin-top:28px;
   }
-  #alianza p{color:var(--paper-dim); font-size:15px; margin-bottom:16px;}
+  .partner-nav{
+    width:40px; height:40px;
+    border:1px solid var(--line);
+    background:var(--bg-0);
+    color:var(--paper);
+    cursor:pointer;
+    font-size:18px;
+    border-radius:var(--radius);
+    transition:border-color .2s, color .2s;
+  }
+  .partner-nav:hover{border-color:var(--patina); color:var(--patina);}
+  .partners-dots{display:flex; gap:8px;}
+  .partner-dot{
+    width:8px; height:8px;
+    border-radius:50%;
+    border:none;
+    background:var(--line);
+    cursor:pointer;
+    padding:0;
+  }
+  .partner-dot.active{background:var(--copper-bright);}
 
   /* ---------- PROYECTOS ---------- */
-  #proyectos{background:var(--bg-1); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
+  #proyectos{background:var(--bg-0);}
   .proj-list{display:flex; flex-direction:column;}
   .proj-row{
     display:grid;
@@ -389,7 +546,8 @@
     letter-spacing:.05em;
   }
   .proj-title{font-family:var(--display); font-weight:500; font-size:17px;}
-  .proj-title span{
+  .proj-title .proj-name{display:block;}
+  .proj-title .proj-sub{
     display:block; font-family:var(--body); font-weight:400;
     font-size:13.5px; color:var(--paper-dim); margin-top:4px;
   }
@@ -407,13 +565,14 @@
   }
 
   /* ---------- SERVICIOS ---------- */
+  #servicios{background:var(--bg-1); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
   .serv-grid{
     display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
     background:var(--line-soft); border:1px solid var(--line-soft);
   }
   @media (max-width:860px){ .serv-grid{grid-template-columns:1fr 1fr;} }
   @media (max-width:560px){ .serv-grid{grid-template-columns:1fr;} }
-  .serv-card{background:var(--bg-0); padding:28px 24px; transition:background .2s;}
+  .serv-card{background:var(--bg-1); padding:28px 24px; transition:background .2s;}
   .serv-card:hover{background:var(--bg-2);}
   .serv-card .n{
     font-family:var(--mono); font-size:11px; color:var(--muted);
@@ -441,23 +600,121 @@
   }
   .stat span{font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:.04em;}
 
+  /* ---------- NEWS ---------- */
+  #noticias{background:var(--bg-1); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
+  .news-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+  @media (max-width:900px){ .news-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .news-grid{grid-template-columns:1fr;} }
+  .news-card{
+    background:var(--bg-0);
+    border:1px solid var(--line-soft);
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    transition:border-color .2s;
+  }
+  .news-card:hover{border-color:var(--line);}
+  .news-thumb{
+    position:relative;
+    display:block;
+    aspect-ratio:16/10;
+    overflow:hidden;
+    text-decoration:none;
+  }
+  .news-thumb img{
+    width:100%; height:100%;
+    object-fit:cover;
+    transition:transform .4s ease;
+  }
+  .news-card:hover .news-thumb img{transform:scale(1.03);}
+  .news-badge{
+    position:absolute; top:10px; left:10px;
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.1em;
+    background:var(--copper);
+    color:var(--bg-0);
+    padding:4px 8px;
+  }
+  .news-body{padding:18px 18px 16px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .news-body time{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--muted);
+    letter-spacing:.04em;
+  }
+  .news-body h3{
+    font-family:var(--display);
+    font-size:16px;
+    font-weight:600;
+    line-height:1.3;
+  }
+  .news-body h3 a{text-decoration:none;}
+  .news-body h3 a:hover{color:var(--copper-bright);}
+  .news-body p{font-size:13.5px; color:var(--paper-dim); flex:1;}
+  .news-share{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:10px; margin-top:8px; padding-top:12px;
+    border-top:1px solid var(--line-soft);
+    flex-wrap:wrap;
+  }
+  .news-share-label{
+    font-family:var(--mono);
+    font-size:10px;
+    color:var(--muted);
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .news-share-btns{display:flex; gap:6px;}
+  .share-btn{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--paper-dim);
+    background:var(--bg-1);
+    border:1px solid var(--line);
+    padding:5px 8px;
+    text-decoration:none;
+    cursor:pointer;
+    border-radius:var(--radius);
+    transition:border-color .2s, color .2s;
+  }
+  .share-btn:hover{border-color:var(--patina); color:var(--patina);}
+
   /* ---------- CONTACT ---------- */
-  #contact{background:var(--bg-1); border-top:1px solid var(--line-soft);}
+  #contact{background:var(--bg-0);}
   .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
   @media (max-width:860px){ .contact-grid{grid-template-columns:1fr;} }
   #contact h2{font-family:var(--display); font-weight:600; font-size:clamp(26px,3vw,36px); margin:14px 0 24px;}
-  .contact-items{display:flex; flex-direction:column; gap:22px;}
+  .contact-items{display:flex; flex-direction:column; gap:0;}
   .contact-item{padding:18px 0; border-top:1px solid var(--line-soft);}
   .contact-item .lbl{font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:.06em; display:block; margin-bottom:6px;}
-  .contact-item .val{font-family:var(--display); font-size:19px; font-weight:500;}
+  .contact-item .val{font-family:var(--display); font-size:18px; font-weight:500;}
   .contact-item a.val{text-decoration:none; transition:color .2s;}
   .contact-item a.val:hover{color:var(--copper-bright);}
+  .contact-item .val.addr{font-size:15px; line-height:1.45; max-width:36ch;}
+
+  .social-row{display:flex; gap:10px; margin-top:8px;}
+  .social-icon{
+    width:40px; height:40px;
+    display:inline-flex; align-items:center; justify-content:center;
+    border:1px solid var(--line);
+    color:var(--paper-dim);
+    text-decoration:none;
+    transition:border-color .2s, color .2s;
+    border-radius:var(--radius);
+  }
+  .social-icon:hover{border-color:var(--copper-bright); color:var(--copper-bright);}
+  .social-icon svg{width:18px; height:18px; fill:currentColor;}
 
   form{display:flex; flex-direction:column; gap:16px;}
   .field{display:flex; flex-direction:column; gap:8px;}
   .field label{font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:.06em;}
   .field input, .field textarea{
-    background:var(--bg-0);
+    background:var(--bg-1);
     border:1px solid var(--line);
     color:var(--paper);
     padding:13px 14px;
@@ -479,12 +736,31 @@
   footer a:hover{color:var(--copper-bright);}
   .footer-brand{display:flex; align-items:center; gap:10px;}
   .footer-mark{height:18px; width:auto; opacity:.75;}
+  .footer-social{display:flex; gap:10px; align-items:center;}
+
+  /* WhatsApp float */
+  .wa-float{
+    position:fixed;
+    right:22px; bottom:22px;
+    z-index:90;
+    width:56px; height:56px;
+    border-radius:50%;
+    background:#25D366;
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.35);
+    text-decoration:none;
+    transition:transform .2s, box-shadow .2s;
+  }
+  .wa-float:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.4);}
+  .wa-float svg{width:28px; height:28px; fill:currentColor;}
 
   .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
   .reveal.in{opacity:1; transform:translateY(0);}
   @media (prefers-reduced-motion:reduce){
     .reveal{opacity:1; transform:none; transition:none;}
     .pulse{animation:none; opacity:0;}
+    .gallery-item img, .news-thumb img{transition:none;}
   }
 </style>
 </head>
@@ -497,15 +773,23 @@
       ANDEAN LABS
     </a>
     <ul class="navlinks" id="navlinks">
-      <li><a href="#labs">Laboratorios</a></li>
-      <li><a href="#alianza">Alianza</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#about">Nosotros</a></li>
-      <li><a href="#contact">Contacto</a></li>
+      <li><a href="#labs" data-i18n="nav.labs">Laboratorios</a></li>
+      <li><a href="#galeria" data-i18n="nav.gallery">Galería</a></li>
+      <li><a href="#convenios" data-i18n="nav.partners">Convenios</a></li>
+      <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+      <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
+      <li><a href="#noticias" data-i18n="nav.news">Noticias</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Hablemos</a>
-    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Idioma / Language / 语言">
+        <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-i18n="nav.cta">Hablemos</a>
+      <button class="burger" id="burger" data-i18n-aria="nav.menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
   </nav>
 </header>
 
@@ -516,12 +800,12 @@
     <img src="assets/logo-full.png" alt="" class="hero-watermark" aria-hidden="true">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">CENTRO DE I+D+I · TARAPACÁ, CHILE</span>
-        <h1>Tres laboratorios.<br>Un mismo <em>circuito</em> de innovación.</h1>
-        <p class="lead">Andean Labs conecta el Laboratorio de Procesos Industriales, el FAB LAB y el Laboratorio de Mecatrónica en un solo circuito de I+D+i, para transformar problemas productivos en soluciones tecnológicas validadas.</p>
+        <span class="eyebrow" data-i18n="hero.eyebrow">CENTRO DE I+D+I · TARAPACÁ, CHILE</span>
+        <h1 data-i18n="hero.title" data-i18n-html>Tres laboratorios.<br>Un mismo <em>circuito</em> de innovación.</h1>
+        <p class="lead" data-i18n="hero.lead">Andean Labs conecta el Laboratorio de Procesos Industriales, el FAB LAB y el Laboratorio de Mecatrónica en un solo circuito de I+D+i, para transformar problemas productivos en soluciones tecnológicas validadas.</p>
         <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary">Hablemos de tu proyecto →</a>
-          <a href="#labs" class="btn btn-ghost">Recorrer los laboratorios</a>
+          <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Hablemos de tu proyecto →</a>
+          <a href="#labs" class="btn btn-ghost" data-i18n="hero.cta2">Recorrer los laboratorios</a>
         </div>
       </div>
       <div class="schema" aria-hidden="true">
@@ -551,35 +835,34 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div>
-          <span class="eyebrow">Infraestructura</span>
-          <h2>Tres laboratorios, un mismo objetivo: llevar la idea al prototipo.</h2>
+          <span class="eyebrow" data-i18n="labs.eyebrow">Infraestructura</span>
+          <h2 data-i18n="labs.title">Laboratorios con un mismo objetivo: llevar la idea al prototipo.</h2>
         </div>
-        <p>Cada laboratorio opera de forma independiente y en conjunto, según lo que tu proyecto necesite en cada etapa.</p>
+        <p data-i18n="labs.lead">Cada laboratorio opera de forma independiente y en conjunto, según lo que tu proyecto necesite en cada etapa.</p>
       </div>
 
       <div class="lab-grid reveal">
         <article class="lab-card">
-          <span class="lab-tag">LAB-01 · PROCESOS</span>
+          <span class="lab-tag" data-i18n="labs.pi.tag">LAB-01 · PROCESOS</span>
           <div class="lab-icon">
             <svg viewBox="0 0 40 40" fill="none" stroke="var(--patina)" stroke-width="1.4">
               <rect x="7" y="14" width="10" height="18" rx="1"/>
               <rect x="23" y="8" width="10" height="24" rx="1"/>
               <path d="M7 14 L12 6 L28 6 L23 14"/>
-              <line x1="12" y1="20" x2="12" y2="20"/>
             </svg>
           </div>
-          <h3>Laboratorio de Procesos Industriales</h3>
-          <p>Optimización, escalamiento y control de procesos productivos, con foco en eficiencia energética y economía circular aplicada a la industria y la minería.</p>
+          <h3 data-i18n="labs.pi.title">Laboratorio de Procesos Industriales</h3>
+          <p data-i18n="labs.pi.body">Optimización, escalamiento y control de procesos productivos, con foco en eficiencia energética y economía circular aplicada a la industria y la minería.</p>
           <ul class="lab-list">
-            <li>Escalamiento piloto de procesos</li>
-            <li>Control y aseguramiento de calidad</li>
-            <li>Eficiencia energética e hídrica</li>
-            <li>Valorización de residuos industriales</li>
+            <li data-i18n="labs.pi.li1">Escalamiento piloto de procesos</li>
+            <li data-i18n="labs.pi.li2">Control y aseguramiento de calidad</li>
+            <li data-i18n="labs.pi.li3">Eficiencia energética e hídrica</li>
+            <li data-i18n="labs.pi.li4">Valorización de residuos industriales</li>
           </ul>
         </article>
 
         <article class="lab-card">
-          <span class="lab-tag">LAB-02 · FABRICACIÓN</span>
+          <span class="lab-tag" data-i18n="labs.fab.tag">LAB-02 · FABRICACIÓN</span>
           <div class="lab-icon">
             <svg viewBox="0 0 40 40" fill="none" stroke="var(--patina)" stroke-width="1.4">
               <rect x="6" y="6" width="28" height="28" rx="1"/>
@@ -587,58 +870,144 @@
               <circle cx="20" cy="20" r="4"/>
             </svg>
           </div>
-          <h3>FAB LAB</h3>
-          <p>Taller de fabricación digital para diseñar, prototipar y validar productos físicos en días en vez de meses, con manufactura aditiva y corte de precisión.</p>
+          <h3 data-i18n="labs.fab.title">FAB LAB</h3>
+          <p data-i18n="labs.fab.body">Taller de fabricación digital para diseñar, prototipar y validar productos físicos en días en vez de meses, con manufactura aditiva y corte de precisión.</p>
           <ul class="lab-list">
-            <li>Impresión 3D y manufactura aditiva</li>
-            <li>Corte CNC y láser</li>
-            <li>Diseño digital y modelado 3D</li>
-            <li>Prototipado rápido de producto</li>
+            <li data-i18n="labs.fab.li1">Impresión 3D y manufactura aditiva</li>
+            <li data-i18n="labs.fab.li2">Corte CNC y láser</li>
+            <li data-i18n="labs.fab.li3">Diseño digital y modelado 3D</li>
+            <li data-i18n="labs.fab.li4">Prototipado rápido de producto</li>
           </ul>
         </article>
 
         <article class="lab-card">
-          <span class="lab-tag">LAB-03 · MECATRÓNICA</span>
+          <span class="lab-tag" data-i18n="labs.mtx.tag">LAB-03 · MECATRÓNICA</span>
           <div class="lab-icon">
             <svg viewBox="0 0 40 40" fill="none" stroke="var(--patina)" stroke-width="1.4">
               <circle cx="20" cy="20" r="6"/>
               <path d="M20 6 V11 M20 29 V34 M6 20 H11 M29 20 H34 M10 10 L13.5 13.5 M26.5 26.5 L30 30 M30 10 L26.5 13.5 M13.5 26.5 L10 30"/>
             </svg>
           </div>
-          <h3>Laboratorio de Mecatrónica</h3>
-          <p>Automatización, robótica aplicada y sistemas embebidos para digitalizar procesos y dar sensórica e inteligencia a equipos productivos.</p>
+          <h3 data-i18n="labs.mtx.title">Laboratorio de Mecatrónica</h3>
+          <p data-i18n="labs.mtx.body">Automatización, robótica aplicada y sistemas embebidos para digitalizar procesos y dar sensórica e inteligencia a equipos productivos.</p>
           <ul class="lab-list">
-            <li>Automatización y control</li>
-            <li>Robótica aplicada</li>
-            <li>Sistemas embebidos e IoT industrial</li>
-            <li>Sensórica y monitoreo remoto</li>
+            <li data-i18n="labs.mtx.li1">Automatización y control</li>
+            <li data-i18n="labs.mtx.li2">Robótica aplicada</li>
+            <li data-i18n="labs.mtx.li3">Sistemas embebidos e IoT industrial</li>
+            <li data-i18n="labs.mtx.li4">Sensórica y monitoreo remoto</li>
+          </ul>
+        </article>
+
+        <article class="lab-card" id="lab-biotecnologia">
+          <span class="lab-tag" data-i18n="labs.bio.tag">LAB-04 · BIOTECNOLOGÍA</span>
+          <div class="lab-icon">
+            <svg viewBox="0 0 40 40" fill="none" stroke="var(--patina)" stroke-width="1.4">
+              <path d="M12 8 C12 16 28 16 28 8"/>
+              <path d="M12 32 C12 24 28 24 28 32"/>
+              <line x1="20" y1="8" x2="20" y2="32"/>
+              <circle cx="16" cy="18" r="2"/>
+              <circle cx="24" cy="22" r="2"/>
+            </svg>
+          </div>
+          <h3 data-i18n="labs.bio.title">Laboratorio de Biotecnología</h3>
+          <p data-i18n="labs.bio.body">TODO: texto de copy pendiente de Martín. Sala de cultivo con iluminación LED y racks de crecimiento indoor para ensayos y desarrollo biotecnológico.</p>
+          <ul class="lab-list">
+            <li data-i18n="labs.bio.li1">Cultivo indoor controlado</li>
+            <li data-i18n="labs.bio.li2">Iluminación LED especializada</li>
+            <li data-i18n="labs.bio.li3">Ensayos y desarrollo biotecnológico</li>
+            <li data-i18n="labs.bio.li4">TODO: línea de capacidad pendiente</li>
           </ul>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ALIANZA -->
-  <section id="alianza">
+  <!-- GALERÍA -->
+  <section id="galeria">
     <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow" data-i18n="gallery.eyebrow">Instalaciones</span>
+          <h2 data-i18n="gallery.title">Nuestros laboratorios</h2>
+        </div>
+        <p data-i18n="gallery.lead">Espacios de química, mecatrónica y trabajo colaborativo en Iquique.</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <figure class="gallery-item">
+          <img src="assets/img/img_3450.jpg" alt="Espacio abierto de laboratorio y oficinas Andean Labs en Iquique" loading="lazy" width="1920" height="1440">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/img/img_3451.jpg" alt="Puestos de trabajo y mesas de laboratorio en Andean Labs" loading="lazy" width="1920" height="1440">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/img/img_3452.jpg" alt="Área de trabajo colaborativo en las instalaciones de Andean Labs" loading="lazy" width="1920" height="1440">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/img/img_3453.jpg" alt="Laboratorio de química y mecatrónica, vista interior" loading="lazy" width="1920" height="1440">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/img/img_3454.jpg" alt="Equipamiento y estaciones de trabajo en Andean Labs" loading="lazy" width="1920" height="1440">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/img/img_3455.jpg" alt="Oficinas abiertas y laboratorio en Iquique" loading="lazy" width="1920" height="1440">
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/img/img_3456.jpg" alt="Instalaciones de I+D de Andean Labs" loading="lazy" width="1920" height="1440">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIOTECNOLOGÍA -->
+  <section id="biotecnologia">
+    <div class="wrap bio-layout">
+      <div class="bio-copy reveal">
+        <span class="eyebrow" data-i18n="bio.eyebrow">Laboratorio de Biotecnología</span>
+        <h2 data-i18n="bio.title">Cultivo indoor y desarrollo biotecnológico.</h2>
+        <p data-i18n="bio.lead">TODO: copy pendiente del cliente. Sala de cultivo con iluminación LED magenta y racks de crecimiento para investigación aplicada.</p>
+      </div>
+      <div class="bio-photos reveal">
+        <img class="bio-main" src="assets/img/biotec_0293.jpg" alt="Sala de cultivo indoor con iluminación LED magenta en el Laboratorio de Biotecnología" loading="lazy" width="1440" height="1920">
+        <img src="assets/img/biotec_6555.jpg" alt="Racks de crecimiento indoor en el Laboratorio de Biotecnología de Andean Labs" loading="lazy" width="1920" height="1440">
+        <img src="assets/img/biotec_6556.jpg" alt="Detalle de la sala de cultivo biotecnológico con LED" loading="lazy" width="1920" height="1440">
+      </div>
+    </div>
+  </section>
+
+  <!-- PODCAST -->
+  <section id="podcast">
+    <div class="wrap podcast-layout">
       <div class="reveal">
-        <span class="eyebrow">Alianza estratégica</span>
-        <h2>Convenio con CIRCULAR TEC para escalar la economía circular en el norte.</h2>
-        <p>Andean Labs y CIRCULAR TEC unieron capacidades para desarrollar proyectos conjuntos de investigación, innovación y transferencia tecnológica orientados a la valorización de residuos, el uso eficiente de recursos y la circularidad de procesos industriales y mineros.</p>
-        <p>Este convenio amplía la infraestructura, red de especialistas y capacidad de cofinanciamiento disponible para los proyectos que ejecutamos con empresas, organismos públicos y centros de investigación de la macrozona norte.</p>
+        <span class="eyebrow" data-i18n="podcast.eyebrow">Comunicaciones</span>
+        <h2 data-i18n="podcast.title">Sala de Podcast de Comunicaciones de Andean Labs Ltda.</h2>
+        <p data-i18n="podcast.lead">Espacio para conversaciones, difusión científica y contenido de innovación desde Iquique.</p>
       </div>
-      <div class="alliance-mark reveal">
-        <div class="alliance-names">
-          <span>ANDEAN LABS</span>
-          <span class="alliance-plus">+</span>
-          <span>CIRCULAR TEC</span>
+      <div class="podcast-photo reveal">
+        <img src="assets/img/podcast_dsc08617.jpg" alt="Sala de podcast de Comunicaciones de Andean Labs Ltda." loading="lazy" width="1920" height="1440">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONVENIOS -->
+  <section id="convenios">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow" data-i18n="partners.eyebrow">Alianzas</span>
+          <h2 data-i18n="partners.title">Nuestros convenios</h2>
         </div>
-        <div class="sub">
-          ÁREA · ECONOMÍA CIRCULAR<br>
-          ALCANCE · MACROZONA NORTE<br>
-          MODALIDAD · I+D+I CONJUNTA
+        <p data-i18n="partners.lead">Trabajamos con instituciones académicas y centros de innovación para escalar proyectos de I+D+i en la macrozona norte.</p>
+      </div>
+
+      <div class="partners-slider reveal" id="partners-slider">
+        <div id="partners-track"></div>
+        <div class="partners-controls">
+          <button type="button" class="partner-nav" id="partners-prev" data-i18n-aria="partners.prev" aria-label="Anterior">‹</button>
+          <div class="partners-dots" id="partners-dots"></div>
+          <button type="button" class="partner-nav" id="partners-next" data-i18n-aria="partners.next" aria-label="Siguiente">›</button>
         </div>
       </div>
+      <!-- Para agregar un convenio: editar data/partners.json (name, logo opcional, tagline). Si no hay logo, se muestra placeholder de texto. -->
     </div>
   </section>
 
@@ -647,40 +1016,44 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div>
-          <span class="eyebrow">En ejecución</span>
-          <h2>Proyectos de innovación e investigación en curso.</h2>
+          <span class="eyebrow" data-i18n="projects.eyebrow">En ejecución</span>
+          <h2 data-i18n="projects.title">Proyectos de innovación e investigación en curso.</h2>
         </div>
-        <p>Una muestra de las líneas de trabajo activas en nuestros laboratorios y con nuestros socios estratégicos.</p>
+        <p data-i18n="projects.lead">Una muestra de las líneas de trabajo activas en nuestros laboratorios y con nuestros socios estratégicos.</p>
       </div>
 
       <div class="proj-list reveal">
         <div class="proj-row">
           <span class="proj-code">PRJ / 01</span>
-          <div class="proj-title">Valorización de residuos industriales y mineros
-            <span>Proyecto conjunto con CIRCULAR TEC · Laboratorio de Procesos Industriales</span>
+          <div class="proj-title">
+            <span class="proj-name" data-i18n="projects.p1.title">Valorización de residuos industriales y mineros</span>
+            <span class="proj-sub" data-i18n="projects.p1.sub">Proyecto conjunto con CIRCULAR TEC · Laboratorio de Procesos Industriales</span>
           </div>
-          <span class="proj-status">En ejecución</span>
+          <span class="proj-status" data-i18n="projects.status">En ejecución</span>
         </div>
         <div class="proj-row">
           <span class="proj-code">PRJ / 02</span>
-          <div class="proj-title">Sensórica IoT para monitoreo de procesos productivos
-            <span>Laboratorio de Mecatrónica</span>
+          <div class="proj-title">
+            <span class="proj-name" data-i18n="projects.p2.title">Sensórica IoT para monitoreo de procesos productivos</span>
+            <span class="proj-sub" data-i18n="projects.p2.sub">Laboratorio de Mecatrónica</span>
           </div>
-          <span class="proj-status">En ejecución</span>
+          <span class="proj-status" data-i18n="projects.status">En ejecución</span>
         </div>
         <div class="proj-row">
           <span class="proj-code">PRJ / 03</span>
-          <div class="proj-title">Prototipado de soluciones de economía circular
-            <span>FAB LAB · en alianza con CIRCULAR TEC</span>
+          <div class="proj-title">
+            <span class="proj-name" data-i18n="projects.p3.title">Prototipado de soluciones de economía circular</span>
+            <span class="proj-sub" data-i18n="projects.p3.sub">FAB LAB · en alianza con CIRCULAR TEC</span>
           </div>
-          <span class="proj-status">En ejecución</span>
+          <span class="proj-status" data-i18n="projects.status">En ejecución</span>
         </div>
         <div class="proj-row">
           <span class="proj-code">PRJ / 04</span>
-          <div class="proj-title">Eficiencia hídrica y reúso de agua en procesos industriales
-            <span>Laboratorio de Procesos Industriales</span>
+          <div class="proj-title">
+            <span class="proj-name" data-i18n="projects.p4.title">Eficiencia hídrica y reúso de agua en procesos industriales</span>
+            <span class="proj-sub" data-i18n="projects.p4.sub">Laboratorio de Procesos Industriales</span>
           </div>
-          <span class="proj-status">En ejecución</span>
+          <span class="proj-status" data-i18n="projects.status">En ejecución</span>
         </div>
       </div>
     </div>
@@ -691,42 +1064,42 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div>
-          <span class="eyebrow">Servicios</span>
-          <h2>La I+D+i es clave para competir y posicionarse en el mercado.</h2>
+          <span class="eyebrow" data-i18n="services.eyebrow">Servicios</span>
+          <h2 data-i18n="services.title">La I+D+i es clave para competir y posicionarse en el mercado.</h2>
         </div>
-        <p>Actuamos como tu departamento externo de I+D+i, bajo un modelo de outsourcing tipo "round trip".</p>
+        <p data-i18n="services.lead">Actuamos como tu departamento externo de I+D+i, bajo un modelo de outsourcing tipo "round trip".</p>
       </div>
 
       <div class="serv-grid reveal">
         <div class="serv-card">
           <span class="n">01</span>
-          <h4>I+D+i tipo Outsourcing</h4>
-          <p>Modelo "Round Trip": entramos, ejecutamos y devolvemos capacidades instaladas a tu equipo.</p>
+          <h4 data-i18n="services.s1.title">I+D+i tipo Outsourcing</h4>
+          <p data-i18n="services.s1.body">Modelo "Round Trip": entramos, ejecutamos y devolvemos capacidades instaladas a tu equipo.</p>
         </div>
         <div class="serv-card">
           <span class="n">02</span>
-          <h4>Nuevos productos y procesos</h4>
-          <p>Desarrollo y mejora de productos, servicios y procesos con respaldo técnico y científico.</p>
+          <h4 data-i18n="services.s2.title">Nuevos productos y procesos</h4>
+          <p data-i18n="services.s2.body">Desarrollo y mejora de productos, servicios y procesos con respaldo técnico y científico.</p>
         </div>
         <div class="serv-card">
           <span class="n">03</span>
-          <h4>Gestión de proyectos tecnológicos</h4>
-          <p>Formulación, postulación y gestión integral de proyectos de innovación.</p>
+          <h4 data-i18n="services.s3.title">Gestión de proyectos tecnológicos</h4>
+          <p data-i18n="services.s3.body">Formulación, postulación y gestión integral de proyectos de innovación.</p>
         </div>
         <div class="serv-card">
           <span class="n">04</span>
-          <h4>Vigilancia tecnológica</h4>
-          <p>Inteligencia competitiva para anticipar tendencias y oportunidades del sector.</p>
+          <h4 data-i18n="services.s4.title">Vigilancia tecnológica</h4>
+          <p data-i18n="services.s4.body">Inteligencia competitiva para anticipar tendencias y oportunidades del sector.</p>
         </div>
         <div class="serv-card">
           <span class="n">05</span>
-          <h4>Incentivo tributario Ley 20.570</h4>
-          <p>Gestión de recursos y beneficios tributarios asociados a inversión en I+D.</p>
+          <h4 data-i18n="services.s5.title">Incentivo tributario Ley 20.570</h4>
+          <p data-i18n="services.s5.body">Gestión de recursos y beneficios tributarios asociados a inversión en I+D.</p>
         </div>
         <div class="serv-card">
           <span class="n">06</span>
-          <h4>Cofinanciamiento público-privado</h4>
-          <p>Búsqueda y gestión de fondos concursables para escalar tus proyectos.</p>
+          <h4 data-i18n="services.s6.title">Cofinanciamiento público-privado</h4>
+          <p data-i18n="services.s6.body">Búsqueda y gestión de fondos concursables para escalar tus proyectos.</p>
         </div>
       </div>
     </div>
@@ -736,18 +1109,32 @@
   <section id="about">
     <div class="wrap">
       <div class="reveal">
-        <span class="eyebrow">Sobre nosotros</span>
-        <h2>Somos tu departamento de I+D+i.</h2>
-        <p>Andean Labs asesora a organizaciones para que sean más competitivas y exitosas. Escuchamos tus necesidades, estudiamos tu caso y proponemos, con fundamento técnico, una o más alternativas de solución.</p>
-        <p>Trabajamos en áreas como economía circular, industria 4.0, desarrollo de software, agua y medio ambiente, y robótica aplicada, con infraestructura propia, metodología probada y un equipo con amplia experiencia en ciencia y tecnología.</p>
+        <span class="eyebrow" data-i18n="about.eyebrow">Sobre nosotros</span>
+        <h2 data-i18n="about.title">Somos tu departamento de I+D+i.</h2>
+        <p data-i18n="about.p1">Andean Labs asesora a organizaciones para que sean más competitivas y exitosas. Escuchamos tus necesidades, estudiamos tu caso y proponemos, con fundamento técnico, una o más alternativas de solución.</p>
+        <p data-i18n="about.p2">Trabajamos en áreas como economía circular, industria 4.0, desarrollo de software, agua y medio ambiente, y robótica aplicada, con infraestructura propia, metodología probada y un equipo con amplia experiencia en ciencia y tecnología.</p>
       </div>
       <div class="reveal">
         <div class="stat-strip">
-          <div class="stat"><b>3</b><span>LABORATORIOS ESPECIALIZADOS</span></div>
-          <div class="stat"><b>1</b><span>CONVENIO ACTIVO · CIRCULAR TEC</span></div>
-          <div class="stat"><b>5</b><span>ÁREAS DE INNOVACIÓN</span></div>
+          <div class="stat"><b>4</b><span data-i18n="about.stat1">LABORATORIOS ESPECIALIZADOS</span></div>
+          <div class="stat"><b>3</b><span data-i18n="about.stat2">CONVENIOS ACTIVOS</span></div>
+          <div class="stat"><b>5</b><span data-i18n="about.stat3">ÁREAS DE INNOVACIÓN</span></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- NOTICIAS -->
+  <section id="noticias">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow" data-i18n="news.eyebrow">Actualidad</span>
+          <h2 data-i18n="news.title">Noticias</h2>
+        </div>
+        <p data-i18n="news.lead">Novedades de Andean Labs. Las entradas marcadas como ejemplo son plantillas: reemplázalas editando data/news.json.</p>
+      </div>
+      <div class="news-grid reveal" id="news-grid"></div>
     </div>
   </section>
 
@@ -755,38 +1142,62 @@
   <section id="contact">
     <div class="wrap contact-grid">
       <div class="reveal">
-        <span class="eyebrow">Contacto</span>
-        <h2>¿Tienes un desafío de innovación?</h2>
+        <span class="eyebrow" data-i18n="contact.eyebrow">Contacto</span>
+        <h2 data-i18n="contact.title">¿Tienes un desafío de innovación?</h2>
         <div class="contact-items">
           <div class="contact-item">
-            <span class="lbl">TELÉFONO</span>
-            <a class="val" href="tel:+56982653092">+56 9 8265 3092</a>
+            <span class="lbl" data-i18n="contact.phone">TELÉFONO</span>
+            <a class="val" data-social="phone" href="tel:+56982653092">+56 9 8265 3092</a>
           </div>
           <div class="contact-item">
-            <span class="lbl">CORREO ELECTRÓNICO</span>
-            <a class="val" href="mailto:contacto@andeanlabs.cl">contacto@andeanlabs.cl</a>
+            <span class="lbl" data-i18n="contact.whatsapp">WHATSAPP</span>
+            <a class="val" data-social="whatsapp" href="https://wa.me/56982653092" target="_blank" rel="noopener">wa.me/56982653092</a>
           </div>
           <div class="contact-item">
-            <span class="lbl">HORARIO DE ATENCIÓN</span>
-            <span class="val">Lun – Vie · 08:00 – 18:00</span>
+            <span class="lbl" data-i18n="contact.email">CORREO ELECTRÓNICO</span>
+            <a class="val" data-social="email" href="mailto:mesparza@andeanlabs.cl">mesparza@andeanlabs.cl</a>
+          </div>
+          <div class="contact-item">
+            <span class="lbl" data-i18n="contact.address">DIRECCIÓN</span>
+            <span class="val addr" data-address>O'Higgins N° 211, Laboratorio 001 Química y 003 Mecatrónica — Iquique, Región de Tarapacá — Chile.</span>
+          </div>
+          <div class="contact-item">
+            <span class="lbl" data-i18n="contact.hours">HORARIO DE ATENCIÓN</span>
+            <span class="val" data-i18n="contact.hoursVal">Lun – Vie · 08:00 – 18:00</span>
+          </div>
+          <div class="contact-item">
+            <span class="lbl" data-i18n="contact.social">REDES SOCIALES</span>
+            <!-- TODO: reemplazar href en data/social.json con URLs oficiales -->
+            <div class="social-row">
+              <a class="social-icon" data-social="facebook" href="#TODO-facebook-url" aria-label="Facebook" title="TODO: URL Facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H6v4h3v8h4v-8h3.1l.9-4H13v-2c0-.6.4-1 1-1z"/></svg>
+              </a>
+              <a class="social-icon" data-social="linkedin" href="#TODO-linkedin-url" aria-label="LinkedIn" title="TODO: URL LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9H3v12h3.5V9zM4.8 3C3.5 3 2.5 4 2.5 5.3S3.5 7.6 4.8 7.6 7 6.6 7 5.3 6 3 4.8 3zM21 13.3c0-3-1.6-4.4-3.8-4.4-1.7 0-2.5.9-2.9 1.6V9H11v12h3.5v-6.4c0-1.7.3-3.3 2.4-3.3 2.1 0 2.1 2 2.1 3.4V21H22v-7.7z"/></svg>
+              </a>
+              <a class="social-icon" data-social="instagram" href="#TODO-instagram-url" aria-label="Instagram" title="TODO: URL Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm11 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7.5A4.5 4.5 0 1 1 12 16.5 4.5 4.5 0 0 1 12 7.5zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"/></svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
       <div class="reveal">
+        <!-- Formulario mailto → mesparza@andeanlabs.cl (sin backend). Alternativa: Formspree/FormSubmit apuntando al mismo correo. -->
         <form id="contact-form">
           <div class="field">
-            <label for="nombre">NOMBRE</label>
-            <input id="nombre" type="text" placeholder="Tu nombre" required>
+            <label for="nombre" data-i18n="contact.name">NOMBRE</label>
+            <input id="nombre" type="text" data-i18n-placeholder="contact.namePh" placeholder="Tu nombre" required>
           </div>
           <div class="field">
-            <label for="correo">CORREO</label>
-            <input id="correo" type="email" placeholder="tucorreo@empresa.cl" required>
+            <label for="correo" data-i18n="contact.mail">CORREO</label>
+            <input id="correo" type="email" data-i18n-placeholder="contact.mailPh" placeholder="tucorreo@empresa.cl" required>
           </div>
           <div class="field">
-            <label for="mensaje">MENSAJE</label>
-            <textarea id="mensaje" rows="4" placeholder="Cuéntanos tu desafío" required></textarea>
+            <label for="mensaje" data-i18n="contact.message">MENSAJE</label>
+            <textarea id="mensaje" rows="4" data-i18n-placeholder="contact.messagePh" placeholder="Cuéntanos tu desafío" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Enviar mensaje →</button>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.submit">Enviar mensaje →</button>
         </form>
       </div>
     </div>
@@ -797,46 +1208,20 @@
 <footer class="wrap">
   <span class="footer-brand">
     <img src="assets/logo-icon.png" alt="Andean Labs" class="footer-mark">
-    Andean Labs — Centro de I+D+i · Tarapacá, Chile
+    <span data-i18n="footer.tag">Andean Labs — Centro de I+D+i · Tarapacá, Chile</span>
   </span>
-  <span>© 2026 · <a href="#top">Volver arriba</a></span>
+  <div class="footer-social">
+    <a data-social="facebook" href="#TODO-facebook-url" aria-label="Facebook">Facebook</a>
+    <a data-social="linkedin" href="#TODO-linkedin-url" aria-label="LinkedIn">LinkedIn</a>
+    <a data-social="instagram" href="#TODO-instagram-url" aria-label="Instagram">Instagram</a>
+    <a href="#top" data-i18n="footer.top">Volver arriba</a>
+  </div>
 </footer>
 
-<script>
-  // menú móvil
-  const burger = document.getElementById('burger');
-  const navlinks = document.getElementById('navlinks');
-  burger.addEventListener('click', () => {
-    const open = navlinks.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
-  });
-  navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    navlinks.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-  }));
+<a class="wa-float" data-social="whatsapp" href="https://wa.me/56982653092" target="_blank" rel="noopener" data-i18n-aria="wa.float" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.4 17.7L2 22l4.4-1.3A11 11 0 0 0 12 23a11 11 0 0 0 8.5-19.5zM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-2.6.8.8-2.5-.2-.3A9 9 0 1 1 12 21zm5-6.7c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9 2.6 1.1 2.6.7 3.1.7.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
 
-  // reveal on scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // formulario: abre el cliente de correo con los datos (sin backend)
-  const form = document.getElementById('contact-form');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const nombre = document.getElementById('nombre').value.trim();
-    const correo = document.getElementById('correo').value.trim();
-    const mensaje = document.getElementById('mensaje').value.trim();
-    const subject = 'Contacto web — ' + nombre;
-    const body = 'Nombre: ' + nombre + '\nCorreo: ' + correo + '\n\n' + mensaje;
-    window.location.href = 'mailto:contacto@andeanlabs.cl?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    const btn = form.querySelector('button');
-    const original = btn.textContent;
-    btn.textContent = 'Abriendo tu correo…';
-    setTimeout(() => btn.textContent = original, 3000);
-  });
-</script>
-
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
