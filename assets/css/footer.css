@@ -172,11 +172,10 @@
   padding: 14px 0;
 }
 
+/* Evitar pelear con el padding/glass de form que aplica glass.css async */
 .site-close form {
-  padding: 22px;
-  border: 1px solid var(--line-soft);
-  background: rgba(13, 21, 18, 0.4);
-  border-radius: var(--radius);
+  /* glass.css ya aporta superficie; aquí solo refuerzo de layout */
+  width: 100%;
 }
 
 .site-close form .btn-primary {

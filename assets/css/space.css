@@ -127,15 +127,16 @@ header.is-compact .brand-mark {
   mix-blend-mode: soft-light;
 }
 
+/* Entrada sin ocultar el logo en el primer paint (evita CLS / flash vacío) */
 .brand .logo-mark,
 .footer-mark-wrap.logo-mark {
-  opacity: 0;
-  transform: translateY(6px) scale(0.92);
+  opacity: 1;
+  transform: none;
 }
 
 html.logo-ready .brand .logo-mark,
 html.logo-ready .footer-mark-wrap.logo-mark {
-  animation: logo-enter 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: logo-enter 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 html.logo-ready .footer-mark-wrap.logo-mark {
@@ -144,13 +145,13 @@ html.logo-ready .footer-mark-wrap.logo-mark {
 
 @keyframes logo-enter {
   0% {
-    opacity: 0;
-    transform: translateY(8px) scale(0.88);
-    filter: brightness(0.7);
+    opacity: 0.35;
+    transform: translateY(6px) scale(0.94);
+    filter: brightness(0.85);
   }
   60% {
     opacity: 1;
-    filter: brightness(1.15);
+    filter: brightness(1.12);
   }
   100% {
     opacity: 1;

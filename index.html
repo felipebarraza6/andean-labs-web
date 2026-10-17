@@ -960,13 +960,9 @@
 <!-- Glass + motion tokens: no bloqueante (después de estilos base) para no restar LCP -->
 <link rel="preload" href="assets/css/glass.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="assets/css/glass.css"></noscript>
-<!-- Espacial + footer: después de glass para no pelear tokens; no bloquean LCP del hero -->
-<link rel="preload" href="assets/css/space.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="assets/css/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript>
-  <link rel="stylesheet" href="assets/css/space.css">
-  <link rel="stylesheet" href="assets/css/footer.css">
-</noscript>
+<!-- Espacial + footer síncronos: evita CLS al aplicar el remate/logo (glass sigue async) -->
+<link rel="stylesheet" href="assets/css/space.css">
+<link rel="stylesheet" href="assets/css/footer.css">
 </head>
 <body>
 
