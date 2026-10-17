@@ -1,0 +1,155 @@
+{
+  "assets/img/biotec_0293.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "srcset": {
+      "avif": "assets/img/r/biotec_0293-480.avif 480w, assets/img/r/biotec_0293-960.avif 960w, assets/img/r/biotec_0293-1600.avif 1600w",
+      "webp": "assets/img/r/biotec_0293-480.webp 480w, assets/img/r/biotec_0293-960.webp 960w, assets/img/r/biotec_0293-1600.webp 1600w",
+      "jpg": "assets/img/r/biotec_0293-480.jpg 480w, assets/img/r/biotec_0293-960.jpg 960w, assets/img/r/biotec_0293-1600.jpg 1600w"
+    }
+  },
+  "assets/img/biotec_6555.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/img/r/biotec_6555-480.avif 480w, assets/img/r/biotec_6555-960.avif 960w, assets/img/r/biotec_6555-1600.avif 1600w",
+      "webp": "assets/img/r/biotec_6555-480.webp 480w, assets/img/r/biotec_6555-960.webp 960w, assets/img/r/biotec_6555-1600.webp 1600w",
+      "jpg": "assets/img/r/biotec_6555-480.jpg 480w, assets/img/r/biotec_6555-960.jpg 960w, assets/img/r/biotec_6555-1600.jpg 1600w"
+    }
+  },
+  "assets/img/biotec_6556.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/img/r/biotec_6556-480.avif 480w, assets/img/r/biotec_6556-960.avif 960w, assets/img/r/biotec_6556-1600.avif 1600w",
+      "webp": "assets/img/r/biotec_6556-480.webp 480w, assets/img/r/biotec_6556-960.webp 960w, assets/img/r/biotec_6556-1600.webp 1600w",
+      "jpg": "assets/img/r/biotec_6556-480.jpg 480w, assets/img/r/biotec_6556-960.jpg 960w, assets/img/r/biotec_6556-1600.jpg 1600w"
+    }
+  },
+  "assets/img/img_3450.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/img/r/img_3450-480.avif 480w, assets/img/r/img_3450-960.avif 960w, assets/img/r/img_3450-1600.avif 1600w",
+      "webp": "assets/img/r/img_3450-480.webp 480w, assets/img/r/img_3450-960.webp 960w, assets/img/r/img_3450-1600.webp 1600w",
+      "jpg": "assets/img/r/img_3450-480.jpg 480w, assets/img/r/img_3450-960.jpg 960w, assets/img/r/img_3450-1600.jpg 1600w"
+    }
+  },
+  "assets/img/img_3451.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/img/r/img_3451-480.avif 480w, assets/img/r/img_3451-960.avif 960w, assets/img/r/img_3451-1600.avif 1600w",
+      "webp": "assets/img/r/img_3451-480.webp 480w, assets/img/r/img_3451-960.webp 960w, assets/img/r/img_3451-1600.webp 1600w",
+      "jpg": "assets/img/r/img_3451-480.jpg 480w, assets/img/r/img_3451-960.jpg 960w, assets/img/r/img_3451-1600.jpg 1600w"
+    }
+  },
+  "assets/img/img_3452.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/img/r/img_3452-480.avif 480w, assets/img/r/img_3452-960.avif 960w, assets/img/r/img_3452-1600.avif 1600w",
+      "webp": "assets/img/r/img_3452-480.webp 480w, assets/img/r/img_3452-960.webp 960w, assets/img/r/img_3452-1600.webp 1600w",
+      "jpg": "assets/img/r/img_3452-480.jpg 480w, assets/img/r/img_3452-960.jpg 960w, assets/img/r/img_3452-1600.jpg 1600w"
+    }
+  },
+  "assets/img/img_3453.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/img/r/img_3453-480.avif 480w, assets/img/r/img_3453-960.avif 960w, assets/img/r/img_3453-1600.avif 1600w",
+      "webp": "assets/img/r/img_3453-480.webp 480w, assets/img/r/img_3453-960.webp 960w, assets/img/r/img_3453-1600.webp 1600w",
+      "jpg": "assets/img/r/img_3453-480.jpg 480w, assets/img/r/img_3453-960.jpg 960w, assets/img/r/img_3453-1600.jpg 1600w"
+    }
+  },
+  "assets/img/img_3454.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/img/r/img_3454-480.avif 480w, assets/img/r/img_3454-960.avif 960w, assets/img/r/img_3454-1600.avif 1600w",
+      "webp": "assets/img/r/img_3454-480.webp 480w, assets/img/r/img_3454-960.webp 960w, assets/img/r/img_3454-1600.webp 1600w",
+      "jpg": "assets/img/r/img_3454-480.jpg 480w, assets/img/r/img_3454-960.jpg 960w, assets/img/r/img_3454-1600.jpg 1600w"
+    }
+  },
+  "assets/img/img_3455.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/img/r/img_3455-480.avif 480w, assets/img/r/img_3455-960.avif 960w, assets/img/r/img_3455-1600.avif 1600w",
+      "webp": "assets/img/r/img_3455-480.webp 480w, assets/img/r/img_3455-960.webp 960w, assets/img/r/img_3455-1600.webp 1600w",
+      "jpg": "assets/img/r/img_3455-480.jpg 480w, assets/img/r/img_3455-960.jpg 960w, assets/img/r/img_3455-1600.jpg 1600w"
+    }
+  },
+  "assets/img/img_3456.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/img/r/img_3456-480.avif 480w, assets/img/r/img_3456-960.avif 960w, assets/img/r/img_3456-1600.avif 1600w",
+      "webp": "assets/img/r/img_3456-480.webp 480w, assets/img/r/img_3456-960.webp 960w, assets/img/r/img_3456-1600.webp 1600w",
+      "jpg": "assets/img/r/img_3456-480.jpg 480w, assets/img/r/img_3456-960.jpg 960w, assets/img/r/img_3456-1600.jpg 1600w"
+    }
+  },
+  "assets/img/podcast_dsc08617.jpg": {
+    "width": 1920,
+    "height": 1077,
+    "srcset": {
+      "avif": "assets/img/r/podcast_dsc08617-480.avif 480w, assets/img/r/podcast_dsc08617-960.avif 960w, assets/img/r/podcast_dsc08617-1600.avif 1600w",
+      "webp": "assets/img/r/podcast_dsc08617-480.webp 480w, assets/img/r/podcast_dsc08617-960.webp 960w, assets/img/r/podcast_dsc08617-1600.webp 1600w",
+      "jpg": "assets/img/r/podcast_dsc08617-480.jpg 480w, assets/img/r/podcast_dsc08617-960.jpg 960w, assets/img/r/podcast_dsc08617-1600.jpg 1600w"
+    }
+  },
+  "assets/news/ejemplo-01.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/news/r/ejemplo-01-480.avif 480w, assets/news/r/ejemplo-01-960.avif 960w, assets/news/r/ejemplo-01-1600.avif 1600w",
+      "webp": "assets/news/r/ejemplo-01-480.webp 480w, assets/news/r/ejemplo-01-960.webp 960w, assets/news/r/ejemplo-01-1600.webp 1600w",
+      "jpg": "assets/news/r/ejemplo-01-480.jpg 480w, assets/news/r/ejemplo-01-960.jpg 960w, assets/news/r/ejemplo-01-1600.jpg 1600w"
+    }
+  },
+  "assets/news/ejemplo-02.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/news/r/ejemplo-02-480.avif 480w, assets/news/r/ejemplo-02-960.avif 960w, assets/news/r/ejemplo-02-1600.avif 1600w",
+      "webp": "assets/news/r/ejemplo-02-480.webp 480w, assets/news/r/ejemplo-02-960.webp 960w, assets/news/r/ejemplo-02-1600.webp 1600w",
+      "jpg": "assets/news/r/ejemplo-02-480.jpg 480w, assets/news/r/ejemplo-02-960.jpg 960w, assets/news/r/ejemplo-02-1600.jpg 1600w"
+    }
+  },
+  "assets/news/ejemplo-03.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/news/r/ejemplo-03-480.avif 480w, assets/news/r/ejemplo-03-960.avif 960w, assets/news/r/ejemplo-03-1600.avif 1600w",
+      "webp": "assets/news/r/ejemplo-03-480.webp 480w, assets/news/r/ejemplo-03-960.webp 960w, assets/news/r/ejemplo-03-1600.webp 1600w",
+      "jpg": "assets/news/r/ejemplo-03-480.jpg 480w, assets/news/r/ejemplo-03-960.jpg 960w, assets/news/r/ejemplo-03-1600.jpg 1600w"
+    }
+  },
+  "assets/news/ejemplo-04.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "srcset": {
+      "avif": "assets/news/r/ejemplo-04-480.avif 480w, assets/news/r/ejemplo-04-960.avif 960w, assets/news/r/ejemplo-04-1600.avif 1600w",
+      "webp": "assets/news/r/ejemplo-04-480.webp 480w, assets/news/r/ejemplo-04-960.webp 960w, assets/news/r/ejemplo-04-1600.webp 1600w",
+      "jpg": "assets/news/r/ejemplo-04-480.jpg 480w, assets/news/r/ejemplo-04-960.jpg 960w, assets/news/r/ejemplo-04-1600.jpg 1600w"
+    }
+  },
+  "assets/news/ejemplo-05.jpg": {
+    "width": 1920,
+    "height": 1077,
+    "srcset": {
+      "avif": "assets/news/r/ejemplo-05-480.avif 480w, assets/news/r/ejemplo-05-960.avif 960w, assets/news/r/ejemplo-05-1600.avif 1600w",
+      "webp": "assets/news/r/ejemplo-05-480.webp 480w, assets/news/r/ejemplo-05-960.webp 960w, assets/news/r/ejemplo-05-1600.webp 1600w",
+      "jpg": "assets/news/r/ejemplo-05-480.jpg 480w, assets/news/r/ejemplo-05-960.jpg 960w, assets/news/r/ejemplo-05-1600.jpg 1600w"
+    }
+  },
+  "assets/news/ejemplo-06.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "srcset": {
+      "avif": "assets/news/r/ejemplo-06-480.avif 480w, assets/news/r/ejemplo-06-960.avif 960w, assets/news/r/ejemplo-06-1600.avif 1600w",
+      "webp": "assets/news/r/ejemplo-06-480.webp 480w, assets/news/r/ejemplo-06-960.webp 960w, assets/news/r/ejemplo-06-1600.webp 1600w",
+      "jpg": "assets/news/r/ejemplo-06-480.jpg 480w, assets/news/r/ejemplo-06-960.jpg 960w, assets/news/r/ejemplo-06-1600.jpg 1600w"
+    }
+  }
+}

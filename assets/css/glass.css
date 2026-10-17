@@ -221,7 +221,6 @@ header.is-compact .brand-mark {
   z-index: 0;
   opacity: 0.9;
   transform: translate3d(0, var(--hero-parallax, 0px), 0);
-  will-change: transform;
 }
 
 .hero-grid,
@@ -232,7 +231,6 @@ header.is-compact .brand-mark {
 
 .hero-watermark {
   transform: translate3d(0, calc(var(--hero-parallax, 0px) * 0.45), 0);
-  will-change: transform;
   transition: opacity var(--dur-slow) var(--ease-soft);
 }
 
@@ -694,6 +692,8 @@ form {
 }
 
 .podcast-photo,
+.podcast-photo picture,
+.bio-photos picture,
 .bio-photos img {
   border-radius: var(--glass-radius);
   border-color: var(--glass-border);
@@ -704,9 +704,17 @@ form {
 }
 
 .podcast-photo:hover,
-.bio-photos img:hover {
+.podcast-photo:hover picture,
+.bio-photos picture:hover {
   transform: translateY(-3px);
   box-shadow: var(--glass-shadow-hover);
+}
+
+.gallery-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
 }
 
 .proj-row {
@@ -732,7 +740,6 @@ form {
     opacity var(--dur-reveal) var(--ease-out),
     transform var(--dur-reveal) var(--ease-out);
   transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, transform;
 }
 
 .reveal.in {
@@ -751,7 +758,6 @@ form {
     opacity var(--dur-reveal) var(--ease-out),
     transform var(--dur-reveal) var(--ease-out);
   transition-delay: calc(var(--stagger-i, 0) * var(--stagger-step));
-  will-change: opacity, transform;
 }
 
 .reveal.in > .lab-card,
