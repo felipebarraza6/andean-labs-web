@@ -1,0 +1,209 @@
+/* Andean Labs — ambient space layer + scroll progress + logo motion */
+
+:root {
+  --space-z: 0;
+  --logo-shine: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(242, 239, 232, 0.45) 48%,
+    rgba(224, 137, 90, 0.55) 52%,
+    transparent 65%
+  );
+}
+
+#space-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--space-z);
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 120;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--patina), var(--copper-bright));
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Keep content above the ambient canvas */
+body > header,
+body > main,
+body > footer,
+body > .wa-float {
+  position: relative;
+  z-index: 1;
+}
+
+body > header {
+  z-index: 100;
+}
+
+body > .wa-float {
+  z-index: 90;
+}
+
+/* Compact header on scroll */
+html.is-scrolled header {
+  background: rgba(13, 21, 18, 0.94);
+}
+
+html.is-scrolled .nav {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+html.is-scrolled .brand-mark {
+  height: 26px;
+}
+
+/* ---------- Logo mark (PNG): entrance + shine hover ---------- */
+.logo-mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.logo-mark img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: auto;
+  height: inherit;
+  object-fit: contain;
+  transition: filter 0.35s ease, transform 0.45s ease, opacity 0.35s ease;
+}
+
+.brand .logo-mark {
+  height: 30px;
+}
+
+.brand .logo-mark img,
+.brand-mark {
+  height: 30px;
+  width: auto;
+}
+
+.footer-mark-wrap.logo-mark {
+  height: 28px;
+}
+
+.footer-mark-wrap .footer-mark {
+  height: 28px;
+  width: auto;
+  opacity: 0.9;
+}
+
+.logo-mark::after {
+  content: "";
+  position: absolute;
+  inset: -40% -60%;
+  background: var(--logo-shine);
+  transform: translateX(-120%) rotate(12deg);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+}
+
+/* Entrance */
+.brand .logo-mark,
+.footer-mark-wrap.logo-mark {
+  opacity: 0;
+  transform: translateY(6px) scale(0.92);
+}
+
+html.logo-ready .brand .logo-mark,
+html.logo-ready .footer-mark-wrap.logo-mark {
+  animation: logo-enter 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+html.logo-ready .footer-mark-wrap.logo-mark {
+  animation-delay: 0.12s;
+}
+
+@keyframes logo-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.88);
+    filter: brightness(0.7);
+  }
+  60% {
+    opacity: 1;
+    filter: brightness(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* Hover / focus microinteraction */
+.brand:hover .logo-mark img,
+.brand:focus-visible .logo-mark img,
+.footer-brand:hover .logo-mark img,
+.footer-brand:focus-within .logo-mark img {
+  filter: brightness(1.12) saturate(1.08);
+  transform: rotate(-4deg) scale(1.04);
+}
+
+.brand:hover .logo-mark::after,
+.brand:focus-visible .logo-mark::after,
+.footer-brand:hover .logo-mark::after,
+.footer-brand:focus-within .logo-mark::after {
+  opacity: 1;
+  animation: logo-shine 0.9s ease forwards;
+}
+
+@keyframes logo-shine {
+  from { transform: translateX(-120%) rotate(12deg); }
+  to { transform: translateX(120%) rotate(12deg); }
+}
+
+html.is-scrolled .brand .logo-mark {
+  height: 26px;
+}
+
+html.is-scrolled .brand .logo-mark img {
+  height: 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #space-bg {
+    opacity: 0.35;
+  }
+
+  html.logo-ready .brand .logo-mark,
+  html.logo-ready .footer-mark-wrap.logo-mark {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .logo-mark::after {
+    display: none;
+  }
+
+  .brand:hover .logo-mark img,
+  .footer-brand:hover .logo-mark img {
+    transform: none;
+  }
+
+  html.is-scrolled .nav {
+    transition: none;
+  }
+}

@@ -119,6 +119,12 @@
   "news.copyLink": "Copy link",
   "news.copied": "Copied!",
 
+  "close.eyebrow": "Next step",
+  "close.title": "Let's turn your challenge into an R&D&I project.",
+  "close.lead": "Reach us on WhatsApp or email and we'll guide you to the right lab and method.",
+  "close.whatsapp": "Message us on WhatsApp",
+  "close.form": "Send a message",
+
   "contact.eyebrow": "Contact",
   "contact.title": "Have an innovation challenge?",
   "contact.phone": "PHONE",
@@ -138,6 +144,12 @@
   "contact.social": "SOCIAL MEDIA",
 
   "footer.tag": "Andean Labs — R&D&I Center · Tarapacá, Chile",
+  "footer.nav": "Navigation",
+  "footer.contact": "Contact",
+  "footer.address": "Address",
+  "footer.lang": "Language",
+  "footer.partners": "Active partnerships",
+  "footer.rights": "© Andean Labs · Tarapacá, Chile",
   "footer.top": "Back to top",
   "wa.float": "Message on WhatsApp"
 }

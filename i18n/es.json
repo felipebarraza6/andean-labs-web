@@ -119,6 +119,12 @@
   "news.copyLink": "Copiar enlace",
   "news.copied": "¡Copiado!",
 
+  "close.eyebrow": "Siguiente paso",
+  "close.title": "Convirtamos tu desafío en un proyecto de I+D+i.",
+  "close.lead": "Escríbenos por WhatsApp o correo y te orientamos con el laboratorio y la metodología adecuados.",
+  "close.whatsapp": "Escribir por WhatsApp",
+  "close.form": "Enviar un mensaje",
+
   "contact.eyebrow": "Contacto",
   "contact.title": "¿Tienes un desafío de innovación?",
   "contact.phone": "TELÉFONO",
@@ -138,6 +144,12 @@
   "contact.social": "REDES SOCIALES",
 
   "footer.tag": "Andean Labs — Centro de I+D+i · Tarapacá, Chile",
+  "footer.nav": "Navegación",
+  "footer.contact": "Contacto",
+  "footer.address": "Dirección",
+  "footer.lang": "Idioma",
+  "footer.partners": "Convenios activos",
+  "footer.rights": "© Andean Labs · Tarapacá, Chile",
   "footer.top": "Volver arriba",
   "wa.float": "Escribir por WhatsApp"
 }
