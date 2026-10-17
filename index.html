@@ -347,29 +347,124 @@
 
   /* ---------- GALLERY ---------- */
   #galeria{background:var(--bg-0);}
-  .gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-  }
-  @media (max-width:860px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:520px){ .gallery-grid{grid-template-columns:1fr;} }
-  .gallery-item{
+  .gallery-slider{
     position:relative;
+    border:1px solid var(--line-soft);
+    background:var(--bg-1);
     overflow:hidden;
+  }
+  .gallery-slide{
+    display:none;
+    position:relative;
+  }
+  .gallery-slide.active{display:block; animation:fadeIn .45s ease;}
+  .gallery-media{
+    position:relative;
     aspect-ratio:4/3;
     background:var(--bg-2);
-    border:1px solid var(--line-soft);
+    overflow:hidden;
   }
-  .gallery-item img{
-    width:100%; height:100%;
+  .gallery-media img{
+    width:100%;
+    height:100%;
     object-fit:cover;
-    transition:transform .5s ease;
+    object-position:center;
   }
-  .gallery-item:hover img{transform:scale(1.04);}
-  .gallery-item.tall{grid-row:span 1;}
-  @media (min-width:861px){
-    .gallery-item:nth-child(1){grid-column:span 2;}
+  .gallery-media img.fit-contain{
+    object-fit:contain;
+    background:var(--bg-0);
+  }
+  .gallery-placeholder{
+    width:100%;
+    height:100%;
+    min-height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    padding:40px 28px;
+    text-align:center;
+    background:
+      repeating-linear-gradient(135deg, var(--bg-0) 0 2px, transparent 2px 14px),
+      var(--bg-2);
+    border:0;
+  }
+  .gallery-placeholder-icon{
+    width:48px; height:48px;
+    border:1px solid var(--line);
+    color:var(--patina);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono);
+    font-size:18px;
+  }
+  .gallery-placeholder-title{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(22px,3vw,32px);
+  }
+  .gallery-placeholder-note{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.06em;
+    color:var(--muted);
+  }
+  .gallery-caption{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    padding:14px 18px 16px;
+    background:rgba(13,21,18,.92);
+    border-top:1px solid var(--line-soft);
+  }
+  @media (min-width:701px){
+    .gallery-caption{
+      position:absolute;
+      left:0; right:0; bottom:0;
+      background:linear-gradient(transparent, rgba(13,21,18,.92) 35%);
+      border-top:0;
+      padding:48px 22px 18px;
+    }
+  }
+  .gallery-caption-lab{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--copper-bright);
+  }
+  .gallery-caption-text{
+    font-size:14px;
+    color:var(--paper);
+    max-width:60ch;
+  }
+  .gallery-controls{
+    display:flex; align-items:center; justify-content:center;
+    gap:16px; margin-top:18px;
+  }
+  .gallery-nav{
+    width:40px; height:40px;
+    border:1px solid var(--line);
+    background:var(--bg-1);
+    color:var(--paper);
+    cursor:pointer;
+    font-size:18px;
+    border-radius:var(--radius);
+    transition:border-color .2s, color .2s;
+  }
+  .gallery-nav:hover{border-color:var(--patina); color:var(--patina);}
+  .gallery-dots{display:flex; flex-wrap:wrap; justify-content:center; gap:8px; max-width:70%;}
+  .gallery-dot{
+    width:8px; height:8px;
+    border-radius:50%;
+    border:0;
+    background:var(--line);
+    cursor:pointer;
+    padding:0;
+  }
+  .gallery-dot.active{background:var(--copper-bright);}
+  @media (prefers-reduced-motion:reduce){
+    .gallery-slide.active{animation:none;}
   }
 
   /* ---------- BIO FEATURE ---------- */
@@ -426,8 +521,10 @@
   }
   .podcast-photo img{
     width:100%;
-    aspect-ratio:4/3;
+    height:auto;
+    aspect-ratio:16/9;
     object-fit:cover;
+    object-position:center;
   }
 
   /* ---------- PARTNERS SLIDER ---------- */
@@ -760,7 +857,7 @@
   @media (prefers-reduced-motion:reduce){
     .reveal{opacity:1; transform:none; transition:none;}
     .pulse{animation:none; opacity:0;}
-    .gallery-item img, .news-thumb img{transition:none;}
+    .news-thumb img{transition:none;}
   }
 </style>
 </head>
@@ -801,8 +898,8 @@
     <div class="wrap hero-grid">
       <div>
         <span class="eyebrow" data-i18n="hero.eyebrow">CENTRO DE I+D+I · TARAPACÁ, CHILE</span>
-        <h1 data-i18n="hero.title" data-i18n-html>Tres laboratorios.<br>Un mismo <em>circuito</em> de innovación.</h1>
-        <p class="lead" data-i18n="hero.lead">Andean Labs conecta el Laboratorio de Procesos Industriales, el FAB LAB y el Laboratorio de Mecatrónica en un solo circuito de I+D+i, para transformar problemas productivos en soluciones tecnológicas validadas.</p>
+        <h1 data-i18n="hero.title" data-i18n-html>Cuatro laboratorios.<br>Un mismo <em>circuito</em> de innovación.</h1>
+        <p class="lead" data-i18n="hero.lead">Andean Labs conecta el Laboratorio de Procesos Industriales, el FAB LAB, el Laboratorio de Mecatrónica y el Laboratorio de Biotecnología en un solo circuito de I+D+i, para transformar problemas productivos en soluciones tecnológicas validadas.</p>
         <div class="hero-ctas">
           <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Hablemos de tu proyecto →</a>
           <a href="#labs" class="btn btn-ghost" data-i18n="hero.cta2">Recorrer los laboratorios</a>
@@ -922,7 +1019,7 @@
     </div>
   </section>
 
-  <!-- GALERÍA -->
+  <!-- GALERÍA — alimentada desde data/gallery.json -->
   <section id="galeria">
     <div class="wrap">
       <div class="section-head reveal">
@@ -930,31 +1027,17 @@
           <span class="eyebrow" data-i18n="gallery.eyebrow">Instalaciones</span>
           <h2 data-i18n="gallery.title">Nuestros laboratorios</h2>
         </div>
-        <p data-i18n="gallery.lead">Espacios de química, mecatrónica y trabajo colaborativo en Iquique.</p>
+        <p data-i18n="gallery.lead">Análisis industriales, mecatrónica, biotecnología y FAB LAB en Iquique.</p>
       </div>
-      <div class="gallery-grid reveal">
-        <figure class="gallery-item">
-          <img src="assets/img/img_3450.jpg" alt="Espacio abierto de laboratorio y oficinas Andean Labs en Iquique" loading="lazy" width="1920" height="1440">
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/img/img_3451.jpg" alt="Puestos de trabajo y mesas de laboratorio en Andean Labs" loading="lazy" width="1920" height="1440">
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/img/img_3452.jpg" alt="Área de trabajo colaborativo en las instalaciones de Andean Labs" loading="lazy" width="1920" height="1440">
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/img/img_3453.jpg" alt="Laboratorio de química y mecatrónica, vista interior" loading="lazy" width="1920" height="1440">
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/img/img_3454.jpg" alt="Equipamiento y estaciones de trabajo en Andean Labs" loading="lazy" width="1920" height="1440">
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/img/img_3455.jpg" alt="Oficinas abiertas y laboratorio en Iquique" loading="lazy" width="1920" height="1440">
-        </figure>
-        <figure class="gallery-item">
-          <img src="assets/img/img_3456.jpg" alt="Instalaciones de I+D de Andean Labs" loading="lazy" width="1920" height="1440">
-        </figure>
+      <div class="gallery-slider reveal" id="gallery-slider" tabindex="0" aria-roledescription="carousel">
+        <div id="gallery-track"></div>
+        <div class="gallery-controls">
+          <button type="button" class="gallery-nav" id="gallery-prev" data-i18n-aria="gallery.prev" aria-label="Anterior">‹</button>
+          <div class="gallery-dots" id="gallery-dots"></div>
+          <button type="button" class="gallery-nav" id="gallery-next" data-i18n-aria="gallery.next" aria-label="Siguiente">›</button>
+        </div>
       </div>
+      <!-- Para agregar/editar fotos: data/gallery.json + assets/img/ -->
     </div>
   </section>
 
@@ -983,7 +1066,7 @@
         <p data-i18n="podcast.lead">Espacio para conversaciones, difusión científica y contenido de innovación desde Iquique.</p>
       </div>
       <div class="podcast-photo reveal">
-        <img src="assets/img/podcast_dsc08617.jpg" alt="Sala de podcast de Comunicaciones de Andean Labs Ltda." loading="lazy" width="1920" height="1440">
+        <img src="assets/img/podcast_dsc08617.jpg" alt="Sala de podcast de Comunicaciones de Andean Labs Ltda." loading="lazy" width="1920" height="1077">
       </div>
     </div>
   </section>
@@ -1147,7 +1230,7 @@
         <div class="contact-items">
           <div class="contact-item">
             <span class="lbl" data-i18n="contact.phone">TELÉFONO</span>
-            <a class="val" data-social="phone" href="tel:+56982653092">+56 9 8265 3092</a>
+            <a class="val" data-social="phone" href="tel:+56976052000">+56 9 7605 2000</a>
           </div>
           <div class="contact-item">
             <span class="lbl" data-i18n="contact.whatsapp">WHATSAPP</span>
@@ -1155,7 +1238,7 @@
           </div>
           <div class="contact-item">
             <span class="lbl" data-i18n="contact.email">CORREO ELECTRÓNICO</span>
-            <a class="val" data-social="email" href="mailto:mesparza@andeanlabs.cl">mesparza@andeanlabs.cl</a>
+            <a class="val" data-social="email" href="mailto:contacto@andeanlabs.cl">contacto@andeanlabs.cl</a>
           </div>
           <div class="contact-item">
             <span class="lbl" data-i18n="contact.address">DIRECCIÓN</span>
@@ -1183,7 +1266,7 @@
         </div>
       </div>
       <div class="reveal">
-        <!-- Formulario mailto → mesparza@andeanlabs.cl (sin backend). Alternativa: Formspree/FormSubmit apuntando al mismo correo. -->
+        <!-- Formulario mailto → mesparza@andeanlabs.cl vía social.formEmail (sin backend). Alternativa: Formspree/FormSubmit apuntando al mismo correo. -->
         <form id="contact-form">
           <div class="field">
             <label for="nombre" data-i18n="contact.name">NOMBRE</label>

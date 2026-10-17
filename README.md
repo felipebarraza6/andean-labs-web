@@ -10,7 +10,8 @@ Preview actual (project site): https://felipebarraza6.github.io/andean-labs-web/
 |-----|--------|
 | Noticias (6 miniaturas) | `data/news.json` + imágenes en `assets/news/` |
 | Convenios / slider | `data/partners.json` (+ `logo` opcional en `assets/`) |
-| Redes, WhatsApp, correo, dirección | `data/social.json` |
+| Galería / carrusel | `data/gallery.json` + imágenes en `assets/img/` |
+| Redes, WhatsApp, correo mostrado, correo del formulario, dirección | `data/social.json` (`email` = visible; `formEmail` = destino del form) |
 | Textos ES / EN / 中文 | `i18n/es.json`, `i18n/en.json`, `i18n/zh.json` |
 | Fotos de laboratorios | `assets/img/` |
 
@@ -66,15 +67,53 @@ Edita `data/partners.json`:
 
 Si no hay logo oficial, deja `"logo": null` y `"todo": true`: se muestra un placeholder de texto con marca TODO.
 
+## Cómo agregar o editar una foto de la galería
+
+1. Sube la imagen a `assets/img/` (recomendado ~1920×1440, JPEG/WebP).
+2. Edita `data/gallery.json` y agrega (o modifica) un objeto en el arreglo:
+
+```json
+{
+  "image": "assets/img/mi-foto.jpg",
+  "lab": "analisis|mecatronica|biotecnologia|fablab|espacios",
+  "title": {
+    "es": "Laboratorio de Análisis Industriales",
+    "en": "Industrial Analysis Laboratory",
+    "zh": "工业分析实验室"
+  },
+  "caption": {
+    "es": "Caption corto en una línea.",
+    "en": "Short one-line caption.",
+    "zh": "一行简短说明。"
+  },
+  "alt": {
+    "es": "Texto alternativo",
+    "en": "Alt text",
+    "zh": "替代文本"
+  },
+  "width": 1920,
+  "height": 1440,
+  "placeholder": false
+}
+```
+
+3. Para el FAB LAB u otra foto pendiente, usa `"image": null`, `"placeholder": true` y un `todo` descriptivo; no rotules una foto de otro laboratorio como FAB LAB.
+4. Haz commit y push a la rama publicada.
+
+El carrusel re-renderiza al cambiar idioma (ES / EN / 中文).
+
 ## Formulario de contacto
 
-El formulario abre el cliente de correo del visitante (`mailto:`) hacia **mesparza@andeanlabs.cl** (definido en `data/social.json` → `email`).
+El correo **mostrado** en Contacto es `contacto@andeanlabs.cl` (`data/social.json` → `email`).
 
-No hay backend. Alternativas sin servidor propio: [Formspree](https://formspree.io/) o [FormSubmit](https://formsubmit.co/) apuntando al mismo correo.
+El formulario abre el cliente de correo del visitante (`mailto:`) hacia **mesparza@andeanlabs.cl** (`data/social.json` → `formEmail`).
+
+No hay backend. Alternativas sin servidor propio: [Formspree](https://formspree.io/) o [FormSubmit](https://formsubmit.co/) apuntando al mismo correo de formulario.
 
 ## WhatsApp y redes
 
 - WhatsApp flotante y en contacto: https://wa.me/56982653092  
+- Teléfono mostrado: +56 9 7605 2000 (`phone` / `phoneDisplay` en `data/social.json`)
 - Facebook / LinkedIn / Instagram: URLs en `data/social.json` con valores `#TODO-…` hasta que el cliente envíe los enlaces oficiales. Edita solo ese archivo.
 
 ## Idiomas
@@ -106,6 +145,7 @@ assets/
 data/
   news.json
   partners.json
+  gallery.json
   social.json
 i18n/
   es.json | en.json | zh.json

@@ -11,8 +11,8 @@
   "nav.menu": "Open menu",
 
   "hero.eyebrow": "R&D&I CENTER · TARAPACÁ, CHILE",
-  "hero.title": "Three labs.<br>One <em>circuit</em> of innovation.",
-  "hero.lead": "Andean Labs connects the Industrial Processes Lab, the FAB LAB and the Mechatronics Lab in a single R&D&I circuit, turning production challenges into validated technology solutions.",
+  "hero.title": "Four labs.<br>One <em>circuit</em> of innovation.",
+  "hero.lead": "Andean Labs connects the Industrial Processes Lab, the FAB LAB, the Mechatronics Lab and the Biotechnology Lab in a single R&D&I circuit, turning production challenges into validated technology solutions.",
   "hero.cta1": "Talk about your project →",
   "hero.cta2": "Tour the labs",
 
@@ -50,7 +50,10 @@
 
   "gallery.eyebrow": "Facilities",
   "gallery.title": "Our laboratories",
-  "gallery.lead": "Chemistry, mechatronics and collaborative workspaces in Iquique.",
+  "gallery.lead": "Industrial analysis, mechatronics, biotechnology and FAB LAB in Iquique.",
+  "gallery.prev": "Previous",
+  "gallery.next": "Next",
+  "gallery.placeholder": "FAB LAB — photo coming soon",
 
   "bio.eyebrow": "Biotechnology Laboratory",
   "bio.title": "Indoor cultivation and biotech development.",

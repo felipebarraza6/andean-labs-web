@@ -11,8 +11,8 @@
   "nav.menu": "Abrir menú",
 
   "hero.eyebrow": "CENTRO DE I+D+I · TARAPACÁ, CHILE",
-  "hero.title": "Tres laboratorios.<br>Un mismo <em>circuito</em> de innovación.",
-  "hero.lead": "Andean Labs conecta el Laboratorio de Procesos Industriales, el FAB LAB y el Laboratorio de Mecatrónica en un solo circuito de I+D+i, para transformar problemas productivos en soluciones tecnológicas validadas.",
+  "hero.title": "Cuatro laboratorios.<br>Un mismo <em>circuito</em> de innovación.",
+  "hero.lead": "Andean Labs conecta el Laboratorio de Procesos Industriales, el FAB LAB, el Laboratorio de Mecatrónica y el Laboratorio de Biotecnología en un solo circuito de I+D+i, para transformar problemas productivos en soluciones tecnológicas validadas.",
   "hero.cta1": "Hablemos de tu proyecto →",
   "hero.cta2": "Recorrer los laboratorios",
 
@@ -50,7 +50,10 @@
 
   "gallery.eyebrow": "Instalaciones",
   "gallery.title": "Nuestros laboratorios",
-  "gallery.lead": "Espacios de química, mecatrónica y trabajo colaborativo en Iquique.",
+  "gallery.lead": "Análisis industriales, mecatrónica, biotecnología y FAB LAB en Iquique.",
+  "gallery.prev": "Anterior",
+  "gallery.next": "Siguiente",
+  "gallery.placeholder": "FAB LAB — foto próximamente",
 
   "bio.eyebrow": "Laboratorio de Biotecnología",
   "bio.title": "Cultivo indoor y desarrollo biotecnológico.",

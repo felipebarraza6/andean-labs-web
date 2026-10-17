@@ -10,8 +10,19 @@
   let social = null;
   let partners = [];
   let news = [];
+  let gallery = [];
   let partnerIndex = 0;
   let partnerTimer = null;
+  let galleryIndex = 0;
+  let galleryTimer = null;
+  let galleryUiReady = false;
+  let prefersReducedMotion = false;
+
+  try {
+    prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  } catch (_) {
+    prefersReducedMotion = false;
+  }
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -24,6 +35,11 @@
 
   function t(key) {
     return (i18n[key] != null ? i18n[key] : key);
+  }
+
+  function pickLocale(obj) {
+    if (!obj) return '';
+    return obj[lang] || obj.es || '';
   }
 
   function applyI18n() {
@@ -46,6 +62,7 @@
     });
     renderPartners();
     renderNews();
+    renderGallery();
     if (social) applySocial();
   }
 
@@ -127,12 +144,148 @@
 
   function startPartnerAutoplay() {
     stopPartnerAutoplay();
+    if (prefersReducedMotion) return;
     partnerTimer = setInterval(() => showPartner(partnerIndex + 1), 4500);
   }
 
   function stopPartnerAutoplay() {
     if (partnerTimer) clearInterval(partnerTimer);
     partnerTimer = null;
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function renderGallery() {
+    const track = $('#gallery-track');
+    if (!track || !gallery.length) return;
+
+    if (galleryIndex >= gallery.length) galleryIndex = 0;
+
+    track.innerHTML = gallery.map((item, i) => {
+      const title = escapeHtml(pickLocale(item.title));
+      const caption = escapeHtml(pickLocale(item.caption));
+      const alt = escapeHtml(pickLocale(item.alt) || title);
+      const w = item.width || 1920;
+      const h = item.height || 1440;
+      const fitClass = (item.objectFit === 'contain' || (h > w)) ? ' fit-contain' : '';
+      let media;
+      if (item.placeholder) {
+        media = `
+          <div class="gallery-placeholder" role="img" aria-label="${alt}">
+            <div class="gallery-placeholder-icon" aria-hidden="true">◇</div>
+            <div class="gallery-placeholder-title">${title}</div>
+            <div class="gallery-placeholder-note">${escapeHtml(pickLocale(item.caption) || t('gallery.placeholder'))}</div>
+          </div>`;
+      } else {
+        media = `<img src="${item.image}" alt="${alt}" loading="lazy" width="${w}" height="${h}" class="${fitClass.trim()}">`;
+      }
+      return `
+        <figure class="gallery-slide${i === galleryIndex ? ' active' : ''}" data-index="${i}" aria-hidden="${i === galleryIndex ? 'false' : 'true'}">
+          <div class="gallery-media">${media}</div>
+          <figcaption class="gallery-caption">
+            <span class="gallery-caption-lab">${title}</span>
+            <span class="gallery-caption-text">${caption}</span>
+          </figcaption>
+        </figure>`;
+    }).join('');
+
+    const dots = $('#gallery-dots');
+    if (dots) {
+      dots.innerHTML = gallery.map((_, i) =>
+        `<button type="button" class="gallery-dot${i === galleryIndex ? ' active' : ''}" data-goto="${i}" aria-label="${i + 1}"></button>`
+      ).join('');
+    }
+  }
+
+  function showGallery(index) {
+    if (!gallery.length) return;
+    galleryIndex = (index + gallery.length) % gallery.length;
+    $$('.gallery-slide').forEach((slide, i) => {
+      slide.classList.toggle('active', i === galleryIndex);
+      slide.setAttribute('aria-hidden', i === galleryIndex ? 'false' : 'true');
+    });
+    $$('.gallery-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === galleryIndex);
+    });
+  }
+
+  function startGalleryAutoplay() {
+    stopGalleryAutoplay();
+    if (prefersReducedMotion || gallery.length < 2) return;
+    galleryTimer = setInterval(() => showGallery(galleryIndex + 1), 5500);
+  }
+
+  function stopGalleryAutoplay() {
+    if (galleryTimer) clearInterval(galleryTimer);
+    galleryTimer = null;
+  }
+
+  function initGalleryUI() {
+    if (galleryUiReady) return;
+    const prev = $('#gallery-prev');
+    const next = $('#gallery-next');
+    const dots = $('#gallery-dots');
+    const slider = $('#gallery-slider');
+    if (!slider) return;
+    galleryUiReady = true;
+
+    if (prev) prev.addEventListener('click', () => {
+      showGallery(galleryIndex - 1);
+      startGalleryAutoplay();
+    });
+    if (next) next.addEventListener('click', () => {
+      showGallery(galleryIndex + 1);
+      startGalleryAutoplay();
+    });
+    if (dots) dots.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-goto]');
+      if (!btn) return;
+      showGallery(Number(btn.dataset.goto));
+      startGalleryAutoplay();
+    });
+
+    slider.addEventListener('mouseenter', stopGalleryAutoplay);
+    slider.addEventListener('mouseleave', startGalleryAutoplay);
+    slider.addEventListener('focusin', stopGalleryAutoplay);
+    slider.addEventListener('focusout', startGalleryAutoplay);
+
+    slider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        showGallery(galleryIndex - 1);
+        startGalleryAutoplay();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        showGallery(galleryIndex + 1);
+        startGalleryAutoplay();
+      }
+    });
+
+    let touchX = null;
+    slider.addEventListener('touchstart', (e) => {
+      touchX = e.changedTouches[0].clientX;
+      stopGalleryAutoplay();
+    }, { passive: true });
+    slider.addEventListener('touchend', (e) => {
+      if (touchX == null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      touchX = null;
+      if (Math.abs(dx) < 40) {
+        startGalleryAutoplay();
+        return;
+      }
+      if (dx > 0) showGallery(galleryIndex - 1);
+      else showGallery(galleryIndex + 1);
+      startGalleryAutoplay();
+    }, { passive: true });
+
+    startGalleryAutoplay();
   }
 
   function formatDate(iso) {
@@ -245,7 +398,7 @@
       const nombre = $('#nombre').value.trim();
       const correo = $('#correo').value.trim();
       const mensaje = $('#mensaje').value.trim();
-      const to = (social && social.email) || 'mesparza@andeanlabs.cl';
+      const to = (social && social.formEmail) || 'mesparza@andeanlabs.cl';
       const subject = 'Contacto web — ' + nombre;
       const body = 'Nombre: ' + nombre + '\nCorreo: ' + correo + '\n\n' + mensaje;
       window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
@@ -298,14 +451,16 @@
     initLangSwitcher();
 
     try {
-      [i18n, social, partners, news] = await Promise.all([
+      [i18n, social, partners, news, gallery] = await Promise.all([
         loadJSON('i18n/' + lang + '.json'),
         loadJSON('data/social.json'),
         loadJSON('data/partners.json'),
-        loadJSON('data/news.json')
+        loadJSON('data/news.json'),
+        loadJSON('data/gallery.json')
       ]);
       applyI18n();
       initPartnersUI();
+      initGalleryUI();
     } catch (err) {
       console.error(err);
       applyI18n();

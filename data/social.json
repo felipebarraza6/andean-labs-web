@@ -3,9 +3,10 @@
   "facebook": "#TODO-facebook-url",
   "linkedin": "#TODO-linkedin-url",
   "instagram": "#TODO-instagram-url",
-  "email": "mesparza@andeanlabs.cl",
-  "phone": "+56982653092",
-  "phoneDisplay": "+56 9 8265 3092",
+  "email": "contacto@andeanlabs.cl",
+  "formEmail": "mesparza@andeanlabs.cl",
+  "phone": "+56976052000",
+  "phoneDisplay": "+56 9 7605 2000",
   "address": {
     "es": "O'Higgins N° 211, Laboratorio 001 Química y 003 Mecatrónica — Iquique, Región de Tarapacá — Chile.",
     "en": "O'Higgins No. 211, Laboratory 001 Chemistry and 003 Mechatronics — Iquique, Tarapacá Region — Chile.",

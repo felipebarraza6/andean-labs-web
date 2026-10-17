@@ -1,0 +1,223 @@
+[
+  {
+    "image": "assets/img/img_3450.jpg",
+    "lab": "analisis",
+    "title": {
+      "es": "Laboratorio de Análisis Industriales",
+      "en": "Industrial Analysis Laboratory",
+      "zh": "工业分析实验室"
+    },
+    "caption": {
+      "es": "Química aplicada y estanterías de material de laboratorio.",
+      "en": "Applied chemistry and laboratory material shelving.",
+      "zh": "应用化学与实验室物料货架。"
+    },
+    "alt": {
+      "es": "Laboratorio de Análisis Industriales: estanterías y material de química",
+      "en": "Industrial Analysis Laboratory: shelves and chemistry materials",
+      "zh": "工业分析实验室：货架与化学材料"
+    },
+    "width": 1920,
+    "height": 1440,
+    "placeholder": false
+  },
+  {
+    "image": "assets/img/img_3451.jpg",
+    "lab": "analisis",
+    "title": {
+      "es": "Laboratorio de Análisis Industriales",
+      "en": "Industrial Analysis Laboratory",
+      "zh": "工业分析实验室"
+    },
+    "caption": {
+      "es": "Mesas y puestos de trabajo para análisis industriales.",
+      "en": "Benches and workstations for industrial analysis.",
+      "zh": "工业分析用工作台与工位。"
+    },
+    "alt": {
+      "es": "Puestos de trabajo del Laboratorio de Análisis Industriales",
+      "en": "Workstations in the Industrial Analysis Laboratory",
+      "zh": "工业分析实验室工位"
+    },
+    "width": 1920,
+    "height": 1440,
+    "placeholder": false
+  },
+  {
+    "image": "assets/img/img_3453.jpg",
+    "lab": "mecatronica",
+    "title": {
+      "es": "Laboratorio de Mecatrónica",
+      "en": "Mechatronics Laboratory",
+      "zh": "机电一体化实验室"
+    },
+    "caption": {
+      "es": "Bancos de electrónica para automatización y sistemas embebidos.",
+      "en": "Electronics benches for automation and embedded systems.",
+      "zh": "用于自动化与嵌入式系统的电子工作台。"
+    },
+    "alt": {
+      "es": "Bancos de trabajo de electrónica en el Laboratorio de Mecatrónica",
+      "en": "Electronics workbenches in the Mechatronics Laboratory",
+      "zh": "机电一体化实验室电子工作台"
+    },
+    "width": 1920,
+    "height": 1440,
+    "placeholder": false
+  },
+  {
+    "image": "assets/img/img_3454.jpg",
+    "lab": "mecatronica",
+    "title": {
+      "es": "Laboratorio de Mecatrónica",
+      "en": "Mechatronics Laboratory",
+      "zh": "机电一体化实验室"
+    },
+    "caption": {
+      "es": "Estaciones de prototipado, sensórica e IoT industrial.",
+      "en": "Stations for prototyping, sensing and industrial IoT.",
+      "zh": "原型、传感与工业物联网工位。"
+    },
+    "alt": {
+      "es": "Equipamiento y estaciones del Laboratorio de Mecatrónica",
+      "en": "Equipment and stations in the Mechatronics Laboratory",
+      "zh": "机电一体化实验室设备与工位"
+    },
+    "width": 1920,
+    "height": 1440,
+    "placeholder": false
+  },
+  {
+    "image": "assets/img/img_3455.jpg",
+    "lab": "mecatronica",
+    "title": {
+      "es": "Laboratorio de Mecatrónica",
+      "en": "Mechatronics Laboratory",
+      "zh": "机电一体化实验室"
+    },
+    "caption": {
+      "es": "Robótica aplicada y control en el circuito de I+D+i.",
+      "en": "Applied robotics and control in the R&D&I circuit.",
+      "zh": "研发创新回路中的应用机器人与控制。"
+    },
+    "alt": {
+      "es": "Vista interior del Laboratorio de Mecatrónica",
+      "en": "Interior view of the Mechatronics Laboratory",
+      "zh": "机电一体化实验室内景"
+    },
+    "width": 1920,
+    "height": 1440,
+    "placeholder": false
+  },
+  {
+    "image": "assets/img/biotec_6555.jpg",
+    "lab": "biotecnologia",
+    "title": {
+      "es": "Laboratorio de Biotecnología",
+      "en": "Biotechnology Laboratory",
+      "zh": "生物技术实验室"
+    },
+    "caption": {
+      "es": "TODO: copy pendiente. Sala de cultivo con LED magenta.",
+      "en": "TODO: copy pending. Cultivation room with magenta LEDs.",
+      "zh": "TODO：文案待定。品红色 LED 培养室。"
+    },
+    "alt": {
+      "es": "Racks de crecimiento indoor en el Laboratorio de Biotecnología",
+      "en": "Indoor growth racks in the Biotechnology Laboratory",
+      "zh": "生物技术实验室室内生长架"
+    },
+    "width": 1920,
+    "height": 1440,
+    "placeholder": false
+  },
+  {
+    "image": "assets/img/biotec_6556.jpg",
+    "lab": "biotecnologia",
+    "title": {
+      "es": "Laboratorio de Biotecnología",
+      "en": "Biotechnology Laboratory",
+      "zh": "生物技术实验室"
+    },
+    "caption": {
+      "es": "TODO: copy pendiente. Racks de crecimiento para ensayos.",
+      "en": "TODO: copy pending. Growth racks for biotech trials.",
+      "zh": "TODO：文案待定。用于试验的生长架。"
+    },
+    "alt": {
+      "es": "Detalle de la sala de cultivo biotecnológico con LED",
+      "en": "Detail of the biotech cultivation room with LED lighting",
+      "zh": "配备 LED 的生物技术培养室细节"
+    },
+    "width": 1920,
+    "height": 1440,
+    "placeholder": false
+  },
+  {
+    "image": "assets/img/img_3452.jpg",
+    "lab": "espacios",
+    "title": {
+      "es": "Andean Labs — espacios de I+D",
+      "en": "Andean Labs — R&D spaces",
+      "zh": "Andean Labs — 研发空间"
+    },
+    "caption": {
+      "es": "Áreas colaborativas para equipos de innovación.",
+      "en": "Collaborative areas for innovation teams.",
+      "zh": "创新团队协作区域。"
+    },
+    "alt": {
+      "es": "Área de trabajo colaborativo en las instalaciones de Andean Labs",
+      "en": "Collaborative workspace at Andean Labs facilities",
+      "zh": "Andean Labs 协作工作区"
+    },
+    "width": 1920,
+    "height": 1440,
+    "placeholder": false
+  },
+  {
+    "image": "assets/img/img_3456.jpg",
+    "lab": "espacios",
+    "title": {
+      "es": "Andean Labs — espacios de I+D",
+      "en": "Andean Labs — R&D spaces",
+      "zh": "Andean Labs — 研发空间"
+    },
+    "caption": {
+      "es": "Instalaciones de I+D abiertas en Iquique.",
+      "en": "Open R&D facilities in Iquique.",
+      "zh": "伊基克开放式研发设施。"
+    },
+    "alt": {
+      "es": "Instalaciones de I+D de Andean Labs en Iquique",
+      "en": "Andean Labs R&D facilities in Iquique",
+      "zh": "伊基克 Andean Labs 研发设施"
+    },
+    "width": 1920,
+    "height": 1440,
+    "placeholder": false
+  },
+  {
+    "image": null,
+    "lab": "fablab",
+    "title": {
+      "es": "Laboratorio FAB LAB",
+      "en": "FAB LAB",
+      "zh": "FAB LAB 数字制造实验室"
+    },
+    "caption": {
+      "es": "FAB LAB — foto próximamente",
+      "en": "FAB LAB — photo coming soon",
+      "zh": "FAB LAB — 照片即将上线"
+    },
+    "alt": {
+      "es": "Placeholder: foto del FAB LAB pendiente",
+      "en": "Placeholder: FAB LAB photo pending",
+      "zh": "占位：FAB LAB 照片待补充"
+    },
+    "width": 1920,
+    "height": 1440,
+    "placeholder": true,
+    "todo": "TODO: reemplazar este placeholder con la foto real del FAB LAB cuando el cliente la envíe"
+  }
+]
