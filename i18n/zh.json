@@ -11,8 +11,8 @@
   "nav.menu": "打开菜单",
 
   "hero.eyebrow": "研发创新中心 · 塔拉帕卡，智利",
-  "hero.title": "三个实验室。<br>同一条创新<em>回路</em>。",
-  "hero.lead": "Andean Labs 将工业过程实验室、FAB LAB 与机电一体化实验室连接为统一的研发创新回路，把生产难题转化为经过验证的技术方案。",
+  "hero.title": "四个实验室。<br>同一条创新<em>回路</em>。",
+  "hero.lead": "Andean Labs 将工业过程实验室、FAB LAB、机电一体化实验室与生物技术实验室连接为统一的研发创新回路，把生产难题转化为经过验证的技术方案。",
   "hero.cta1": "讨论您的项目 →",
   "hero.cta2": "参观实验室",
 
@@ -50,7 +50,10 @@
 
   "gallery.eyebrow": "设施",
   "gallery.title": "我们的实验室",
-  "gallery.lead": "伊基克的化学、机电一体化与协作工作空间。",
+  "gallery.lead": "伊基克的工业分析、机电一体化、生物技术与 FAB LAB。",
+  "gallery.prev": "上一项",
+  "gallery.next": "下一项",
+  "gallery.placeholder": "FAB LAB — 照片即将上线",
 
   "bio.eyebrow": "生物技术实验室",
   "bio.title": "室内培养与生物技术开发。",
