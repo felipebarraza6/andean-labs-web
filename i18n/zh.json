@@ -119,6 +119,12 @@
   "news.copyLink": "复制链接",
   "news.copied": "已复制！",
 
+  "close.eyebrow": "下一步",
+  "close.title": "让我们把您的挑战变成研发创新项目。",
+  "close.lead": "通过 WhatsApp 或邮件联系我们，我们会为您匹配合适的实验室与方法。",
+  "close.whatsapp": "通过 WhatsApp 联系",
+  "close.form": "发送消息",
+
   "contact.eyebrow": "联系",
   "contact.title": "您有创新挑战吗？",
   "contact.phone": "电话",
@@ -138,6 +144,12 @@
   "contact.social": "社交媒体",
 
   "footer.tag": "Andean Labs — 研发创新中心 · 塔拉帕卡，智利",
+  "footer.nav": "导航",
+  "footer.contact": "联系",
+  "footer.address": "地址",
+  "footer.lang": "语言",
+  "footer.partners": "合作伙伴",
+  "footer.rights": "© Andean Labs · 塔拉帕卡，智利",
   "footer.top": "返回顶部",
   "wa.float": "通过 WhatsApp 联系"
 }
