@@ -957,6 +957,9 @@
     .hero h1{font-size:clamp(26px, 8vw, 34px);}
   }
 </style>
+<!-- Glass + motion tokens: no bloqueante (después de estilos base) para no restar LCP -->
+<link rel="preload" href="assets/css/glass.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/css/glass.css"></noscript>
 </head>
 <body>
 
@@ -1425,5 +1428,6 @@
 </a>
 
 <script type="module" src="assets/js/main.js"></script>
+<script type="module" src="assets/js/motion.js"></script>
 </body>
 </html>
