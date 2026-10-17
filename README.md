@@ -17,7 +17,7 @@ Preview actual (project site): https://felipebarraza6.github.io/andean-labs-web/
 
 ## Cómo agregar una noticia
 
-1. Sube la miniatura a `assets/news/` (JPEG/WebP recomendado, ~1200px de ancho).
+1. Sube la miniatura a `assets/news/` (JPEG original; luego corre `npm run optimize-images`).
 2. Abre `data/news.json` y agrega un objeto al **inicio** del arreglo (las 6 más recientes por `date` se muestran):
 
 ```json
@@ -69,7 +69,7 @@ Si no hay logo oficial, deja `"logo": null` y `"todo": true`: se muestra un plac
 
 ## Cómo agregar o editar una foto de la galería
 
-1. Sube la imagen a `assets/img/` (recomendado ~1920×1440, JPEG/WebP).
+1. Sube la imagen a `assets/img/` (recomendado ~1920×1440 JPEG) y corre `npm run optimize-images`.
 2. Edita `data/gallery.json` y agrega (o modifica) un objeto en el arreglo:
 
 ```json
@@ -138,24 +138,44 @@ Cuando quieras activar el dominio:
 ```
 index.html
 assets/
-  js/main.js
-  img/          # fotos de labs, biotec, podcast
-  news/         # miniaturas de noticias
-  logo-*.png
+  js/
+    main.js       # entrada (ES modules, sin bundler)
+    lib.js        # fetch cache, picture/srcset
+    gallery.js | partners.js | news.js
+  img/            # originales + img/r/ (AVIF/WebP/JPG responsive)
+  news/           # miniaturas + news/r/
+  logo-*.png|.webp
 data/
-  news.json
-  partners.json
-  gallery.json
-  social.json
+  news.json | partners.json | gallery.json | social.json
+  image-manifest.json   # generado por el script de imágenes
 i18n/
   es.json | en.json | zh.json
+scripts/
+  optimize-images.mjs   # regenera variantes responsive (Node + sharp)
 ```
+
+## Imágenes responsive (rendimiento)
+
+Las fotos grandes viven en `assets/img/` y `assets/news/`. El sitio sirve variantes **AVIF / WebP / JPG** en anchos **480 / 960 / 1600** vía `<picture>` + `srcset`/`sizes`.
+
+Tras agregar o reemplazar un JPG/PNG:
+
+```bash
+npm install          # solo para el script (devDependency: sharp)
+npm run optimize-images
+```
+
+Eso escribe `assets/{img,news}/r/<nombre>-<ancho>.{avif,webp,jpg}`, actualiza `srcset`/`sizes`/`width`/`height` en `data/gallery.json` y `data/news.json` (el campo `image` original se conserva como fallback), y regenera `data/image-manifest.json`.
+
+Sin Node, el sitio sigue funcionando: el JS usa `image` si no hay `srcset`, o deriva rutas `*/r/` por convención.
 
 ## Desarrollo local
 
-Sirve la carpeta con cualquier servidor estático (necesario para que `fetch` cargue los JSON):
+Sirve la carpeta con cualquier servidor estático (necesario para `fetch` de JSON y ES modules):
 
 ```bash
 python3 -m http.server 8080
 # abrir http://localhost:8080
 ```
+
+O: `npm run serve`.
