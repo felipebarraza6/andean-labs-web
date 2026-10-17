@@ -1,0 +1,14 @@
+{
+  "name": "andean-labs-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio estático Andean Labs (GitHub Pages). El script de imágenes usa Node + sharp solo en desarrollo.",
+  "type": "module",
+  "scripts": {
+    "optimize-images": "node scripts/optimize-images.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
+}

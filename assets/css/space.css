@@ -1,4 +1,6 @@
-/* Andean Labs — ambient space layer + scroll progress + logo motion */
+/* Andean Labs — ambient space layer + scroll progress + logo motion
+ * Header compacto: solo motion.js → header.is-compact (glass.css).
+ * No usar html.is-scrolled aquí para no duplicar listeners/estilos. */
 
 :root {
   --space-z: 0;
@@ -18,7 +20,9 @@
   height: 100%;
   z-index: var(--space-z);
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 0.78;
+  /* Fixed layer: no transform — evita pelear con --hero-parallax de motion.js */
+  transform: none;
 }
 
 #scroll-progress {
@@ -52,21 +56,7 @@ body > .wa-float {
   z-index: 90;
 }
 
-/* Compact header on scroll */
-html.is-scrolled header {
-  background: rgba(13, 21, 18, 0.94);
-}
-
-html.is-scrolled .nav {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-html.is-scrolled .brand-mark {
-  height: 26px;
-}
-
-/* ---------- Logo mark (PNG): entrance + shine hover ---------- */
+/* ---------- Logo mark: entrance + shine hover (PNG/WebP via <picture>) ---------- */
 .logo-mark {
   position: relative;
   display: inline-flex;
@@ -77,6 +67,10 @@ html.is-scrolled .brand-mark {
   isolation: isolate;
 }
 
+.logo-mark picture {
+  display: contents;
+}
+
 .logo-mark img {
   position: relative;
   z-index: 1;
@@ -84,7 +78,11 @@ html.is-scrolled .brand-mark {
   width: auto;
   height: inherit;
   object-fit: contain;
-  transition: filter 0.35s ease, transform 0.45s ease, opacity 0.35s ease;
+  transition:
+    filter 0.35s ease,
+    transform 0.45s ease,
+    opacity 0.35s ease,
+    height var(--dur-med, 360ms) var(--ease-soft, ease);
 }
 
 .brand .logo-mark {
@@ -95,6 +93,16 @@ html.is-scrolled .brand-mark {
 .brand-mark {
   height: 30px;
   width: auto;
+}
+
+/* Alineado con glass.css header.is-compact .brand-mark */
+header.is-compact .brand .logo-mark {
+  height: 24px;
+}
+
+header.is-compact .brand .logo-mark img,
+header.is-compact .brand-mark {
+  height: 24px;
 }
 
 .footer-mark-wrap.logo-mark {
@@ -119,7 +127,6 @@ html.is-scrolled .brand-mark {
   mix-blend-mode: soft-light;
 }
 
-/* Entrance */
 .brand .logo-mark,
 .footer-mark-wrap.logo-mark {
   opacity: 0;
@@ -152,7 +159,6 @@ html.logo-ready .footer-mark-wrap.logo-mark {
   }
 }
 
-/* Hover / focus microinteraction */
 .brand:hover .logo-mark img,
 .brand:focus-visible .logo-mark img,
 .footer-brand:hover .logo-mark img,
@@ -174,14 +180,6 @@ html.logo-ready .footer-mark-wrap.logo-mark {
   to { transform: translateX(120%) rotate(12deg); }
 }
 
-html.is-scrolled .brand .logo-mark {
-  height: 26px;
-}
-
-html.is-scrolled .brand .logo-mark img {
-  height: 26px;
-}
-
 @media (prefers-reduced-motion: reduce) {
   #space-bg {
     opacity: 0.35;
@@ -201,9 +199,5 @@ html.is-scrolled .brand .logo-mark img {
   .brand:hover .logo-mark img,
   .footer-brand:hover .logo-mark img {
     transform: none;
-  }
-
-  html.is-scrolled .nav {
-    transition: none;
   }
 }
