@@ -1,0 +1,12 @@
+name: ftp-ls
+on: workflow_dispatch
+jobs:
+  ls:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+      - name: ftps list
+        env: {S: "${{ secrets.FTP_SERVER }}", U: "${{ secrets.FTP_USERNAME }}", P: "${{ secrets.FTP_PASSWORD }}"}
+        run: |
+          echo "== FTPS =="; lftp -u "$U,$P" -e "set ftp:ssl-force true; set ssl:verify-certificate no; set net:timeout 20; set net:max-retries 1; pwd; cls -la; cls -la public_html/ | head -40; bye" "$S" || echo FTPS_FAIL
+          echo "== PLAIN =="; lftp -u "$U,$P" -e "set ftp:ssl-allow false; set net:timeout 20; set net:max-retries 1; pwd; cls -1; bye" "$S" || echo PLAIN_FAIL
