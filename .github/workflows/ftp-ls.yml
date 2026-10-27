@@ -1,5 +1,7 @@
 name: ftp-ls
-on: workflow_dispatch
+on:
+  push:
+    branches: [ci/ftp-deploy]
 jobs:
   ls:
     runs-on: ubuntu-latest
