@@ -179,3 +179,17 @@ python3 -m http.server 8080
 ```
 
 O: `npm run serve`.
+
+## Cómo publicar
+
+Cada push a `main` publica el sitio en [andeanlabs.cl](https://andeanlabs.cl/) en alrededor de un minuto. Edita `index.html`, `assets/`, `data/` o `i18n/`, haz commit y push; no hace falta subir archivos a mano.
+
+También puedes lanzarlo a mano: pestaña **Actions** → **Deploy FTP (producción)** → **Run workflow**.
+
+Secretos necesarios (Settings → Secrets and variables → Actions):
+
+- `FTP_SERVER`: `bh8940.banahosting.com` (host directo del servidor; no uses `ftp.iquique.cl`, que pasa por Cloudflare)
+- `FTP_USERNAME`: `deploy@andeanlabs.cl`
+- `FTP_PASSWORD`: la clave de esa cuenta FTP
+
+Esa cuenta FTP solo puede escribir en la carpeta de andeanlabs.cl. El deploy no borra `_old_wp`, `.well-known` ni `cgi-bin`.
