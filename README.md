@@ -180,15 +180,16 @@ python3 -m http.server 8080
 
 O: `npm run serve`.
 
-## Deploy a producción (FTP, andeanlabs.cl)
+## Cómo publicar
 
-Workflow `.github/workflows/deploy-ftp.yml`: corre en push a `main` y manual (`workflow_dispatch`).
-Copia `index.html`, `assets/`, `data/`, `i18n/` a `dist/`, reemplaza las URLs absolutas de GitHub Pages
-(canonical / og / twitter) por `SITE_URL` y sube `dist/` por FTP con SamKirkland/FTP-Deploy-Action v4.3.6
-(sincroniza solo cambios). GitHub Pages sigue igual: se sirve desde `main` sin tocar.
+Cada push a `main` publica el sitio en [andeanlabs.cl](https://andeanlabs.cl/) en alrededor de un minuto. Edita `index.html`, `assets/`, `data/` o `i18n/`, haz commit y push; no hace falta subir archivos a mano.
 
-Secrets (Settings → Secrets and variables → Actions):
-- `FTP_SERVER` (host, sin `ftp://`), `FTP_USERNAME`, `FTP_PASSWORD` — obligatorios; si falta alguno, el job se omite sin fallar.
-- `FTP_SERVER_DIR` — opcional, por defecto `public_html/` (debe terminar en `/`; usa `./` si el usuario FTP ya cae en la raíz web).
+También puedes lanzarlo a mano: pestaña **Actions** → **Deploy FTP (producción)** → **Run workflow**.
 
-Variables opcionales: `FTP_PROTOCOL` (`ftps` por defecto; `ftp` si el hosting no soporta TLS), `SITE_URL` (por defecto `https://andeanlabs.cl`).
+Secretos necesarios (Settings → Secrets and variables → Actions):
+
+- `FTP_SERVER`: `bh8940.banahosting.com` (host directo del servidor; no uses `ftp.iquique.cl`, que pasa por Cloudflare)
+- `FTP_USERNAME`: `deploy@andeanlabs.cl`
+- `FTP_PASSWORD`: la clave de esa cuenta FTP
+
+Esa cuenta FTP solo puede escribir en la carpeta de andeanlabs.cl. El deploy no borra `_old_wp`, `.well-known` ni `cgi-bin`.
